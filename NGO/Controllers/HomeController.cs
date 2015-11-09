@@ -13,7 +13,7 @@ namespace NGO.Controllers
         // GET api/<controller>
         public ActionResult Index()
         {
-
+            return View();
         }
     }
 }

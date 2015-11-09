@@ -1,7 +1,7 @@
 ﻿
 
 'use strict';
-angular.module('ssb').config(appRoute);
+angular.module('ngo').config(appRoute);
 
 appRoute.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function appRoute($stateProvider, $urlRouterProvider, $locationProvider) {
