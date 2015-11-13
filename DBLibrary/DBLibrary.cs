@@ -14,7 +14,7 @@ namespace DBLibrary
         public Object ExecuteQueryNonQuery(string strConnection, string sFunctionName, SqlParameter[] listInParam)
         {
 
-            SqlParameter param;
+            SqlParameter param; ;
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand cmd = new SqlCommand();
             SqlParameter paramReturnValue = new SqlParameter();
