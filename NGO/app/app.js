@@ -1,2 +1,2 @@
 ﻿
-angular.module("ngo", []);
+angular.module("ngo", ['ui.router','ui.bootstrap']);

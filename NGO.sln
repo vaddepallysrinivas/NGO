@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGO", "NGO\NGO.csproj", "{B1217A22-2873-43F9-9E47-40B168A9A0AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "..\..\ddd\DBLibrary\DBLibrary\DBLibrary.csproj", "{F825CF88-9E5C-4C6F-8422-4EE599286E56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B1217A22-2873-43F9-9E47-40B168A9A0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1217A22-2873-43F9-9E47-40B168A9A0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1217A22-2873-43F9-9E47-40B168A9A0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F825CF88-9E5C-4C6F-8422-4EE599286E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F825CF88-9E5C-4C6F-8422-4EE599286E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F825CF88-9E5C-4C6F-8422-4EE599286E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F825CF88-9E5C-4C6F-8422-4EE599286E56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

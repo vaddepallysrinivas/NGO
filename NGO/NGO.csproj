@@ -108,100 +108,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\admin\admin.html" />
     <Content Include="app\app.js" />
     <Content Include="app\appRoute.js" />
-    <Content Include="content\asset\css\bootstrap-theme.css" />
-    <Content Include="content\asset\css\bootstrap-theme.min.css" />
-    <Content Include="content\asset\css\bootstrap.css" />
-    <Content Include="content\asset\css\bootstrap.min.css" />
-    <Content Include="content\asset\js\bootstrap.js" />
-    <Content Include="content\asset\js\bootstrap.min.js" />
-    <Content Include="content\css\animate.css" />
-    <Content Include="content\css\colors\blue.css" />
-    <Content Include="content\css\font-awesome.css" />
-    <Content Include="content\css\font-awesome.min.css" />
-    <Content Include="content\css\responsive.css" />
-    <Content Include="content\css\style.css" />
+    <Content Include="app\directive\customDatePicker.html" />
+    <Content Include="app\directive\customDatePicker.js" />
+    <Content Include="app\home\Home.html" />
+    <Content Include="app\masters\notification.html" />
+    <Content Include="app\masters\notification.js" />
+    <Content Include="app\masters\notificationService.js" />
+    <Content Include="content\bootstrapCss\app.css" />
+    <Content Include="content\bootstrapCss\bootstrap-datetimepicker.min.css" />
+    <Content Include="content\bootstrapCss\bootstrap-theme.css" />
+    <Content Include="content\bootstrapCss\bootstrap.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="images\about-01.jpg" />
-    <Content Include="images\about-02.jpg" />
-    <Content Include="images\about-03.jpg" />
-    <Content Include="images\author.png" />
-    <Content Include="images\avatar.png" />
-    <Content Include="images\blog-01.jpg" />
-    <Content Include="images\blog-02.jpg" />
-    <Content Include="images\blog-03.jpg" />
-    <Content Include="images\blog-04.jpg" />
-    <Content Include="images\blog-05.jpg" />
-    <Content Include="images\blog-mini-01.jpg" />
-    <Content Include="images\blog-mini-02.jpg" />
-    <Content Include="images\blog-mini-03.jpg" />
-    <Content Include="images\bussniss-pic.jpg" />
-    <Content Include="images\c1.png" />
-    <Content Include="images\c2.png" />
-    <Content Include="images\c3.png" />
-    <Content Include="images\c4.png" />
-    <Content Include="images\c5.png" />
-    <Content Include="images\c6.png" />
-    <Content Include="images\c7.png" />
-    <Content Include="images\c8.png" />
-    <Content Include="images\favicon.png" />
-    <Content Include="images\flickr-01.jpg" />
-    <Content Include="images\flickr-02.jpg" />
-    <Content Include="images\footer-margo.png" />
-    <Content Include="images\map.png" />
-    <Content Include="images\margo.png" />
-    <Content Include="images\ngoAdminLogo.png" />
-    <Content Include="images\parallax\bg-01.jpg" />
-    <Content Include="images\parallax\bg-02.jpg" />
-    <Content Include="images\Portfolio\01-big.jpg" />
-    <Content Include="images\Portfolio\1.png" />
-    <Content Include="images\Portfolio\2.png" />
-    <Content Include="images\service-01.jpg" />
-    <Content Include="images\service-02.jpg" />
-    <Content Include="images\service-03.jpg" />
-    <Content Include="images\slider\bg1.jpg" />
-    <Content Include="images\slider\bg2.jpg" />
-    <Content Include="images\slider\bg3.jpg" />
-    <Content Include="images\team\face_1.png" />
-    <Content Include="images\team\face_2.png" />
-    <Content Include="images\team\face_3.png" />
-    <Content Include="images\team\face_4.png" />
-    <Content Include="scripts\js\count-to.js" />
-    <Content Include="scripts\js\jquery-2.1.1.js" />
-    <Content Include="scripts\js\jquery-2.1.1.min.js" />
-    <Content Include="scripts\js\jquery-migrate-1.2.1.min.js" />
-    <Content Include="scripts\js\jquery.appear.js" />
-    <Content Include="scripts\js\jquery.easypiechart.js" />
-    <Content Include="scripts\js\jquery.easypiechart.min.js" />
-    <Content Include="scripts\js\jquery.fitvids.js" />
-    <Content Include="scripts\js\jquery.isotope.js" />
-    <Content Include="scripts\js\jquery.isotope.min.js" />
-    <Content Include="scripts\js\jquery.lettering.js" />
-    <Content Include="scripts\js\jquery.migrate.js" />
-    <Content Include="scripts\js\jquery.min.js" />
-    <Content Include="scripts\js\jquery.nicescroll.js" />
-    <Content Include="scripts\js\jquery.nicescroll.min.js" />
-    <Content Include="scripts\js\jquery.parallax.js" />
-    <Content Include="scripts\js\jquery.textillate.js" />
-    <Content Include="scripts\js\mediaelement-and-player.js" />
-    <Content Include="scripts\js\modernizrr.js" />
-    <Content Include="scripts\js\nivo-lightbox.js" />
-    <Content Include="scripts\js\nivo-lightbox.min.js" />
-    <Content Include="scripts\js\owl.carousel.js" />
-    <Content Include="scripts\js\owl.carousel.min.js" />
-    <Content Include="scripts\js\script.js" />
+    <Content Include="images\01.jpg" />
+    <Content Include="images\02.jpg" />
+    <Content Include="images\03.jpg" />
+    <Content Include="images\04.jpg" />
+    <Content Include="images\a17.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\homelogo.jpg" />
+    <Content Include="images\flag.jpg" />
+    <Content Include="images\flag2.jpg" />
+    <Content Include="images\img_chania.jpg" />
+    <Content Include="images\img_chania2.jpg" />
+    <Content Include="images\img_flower.jpg" />
+    <Content Include="images\img_flower2.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\new.gif" />
+    <Content Include="images\success.jpg" />
+    <Content Include="images\vivekananda.jpg" />
+    <Content Include="scripts\angular\angular-ui-router.min.js" />
+    <Content Include="scripts\angular\angular.min.js" />
+    <Content Include="scripts\bootstrapJs\bootstrap-datetimepicker.js" />
+    <Content Include="scripts\bootstrapJs\bootstrap-datetimepicker.min.js" />
+    <Content Include="scripts\bootstrapJs\bootstrap.min.js" />
+    <Content Include="scripts\bootstrapJs\moment.js" />
+    <Content Include="scripts\bootstrapJs\ui-bootstrap-tpls-0.11.2.js" />
+    <Content Include="scripts\jquery.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\XMLdoc.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\NgoController.cs" />
+    <Compile Include="BusinessLayer\NgoDataOperations.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAcessLayer\NgoDbOperations.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,17 +173,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="content\asset\css\bootstrap-theme.css.map" />
-    <Content Include="content\asset\css\bootstrap.css.map" />
-    <Content Include="content\fonts\fontawesome-webfont.eot" />
-    <Content Include="content\fonts\fontawesome-webfont.svg" />
-    <Content Include="content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="content\fonts\fontawesome-webfont.woff" />
-    <Content Include="content\fonts\FontAwesome.otf" />
-    <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -231,10 +181,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\directives\" />
-    <Folder Include="app\login\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>

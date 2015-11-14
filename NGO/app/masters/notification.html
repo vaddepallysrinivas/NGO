@@ -1,0 +1,68 @@
+﻿<div class="row">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Notification Master</div>
+        <div class="panel-body">
+            <form name="loginForm" class="form-horizontal" novalidate>
+
+                <div class="form-group">
+<!--  -->
+                    <div class="col-sm-3">
+                        <label for="notificationcode" class="control-label">Notification Code</label>
+                        <input type="text" class="form-control" name="notificationcode" ng-model="vm.model.notificationCode" required autofocus>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="notificationcode" class="control-label">Notification Text</label>
+                        <input type="text" class="form-control" name="notificationcode" ng-model="vm.model.notificationText" required autofocus>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+
+
+                    <div class="col-md-3">
+                        <label for="startDate">Start Date</label>
+                        <div name="startDate" custom-date-picker ng-model="vm.model.startDate" />
+                    </div>
+                    <div class="col-sm-3">
+                         <label for="endDate">End Date</label>
+                        <div name="endDate" custom-date-picker ng-model="vm.model.endDate" />
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="col-sm-3">
+                        <label for="notificationcode" class="control-label">Fee Amount</label>
+                        <input type="password" class="form-control" name="feeamout" ng-model="vm.model.feeamout" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <button class="btn btn-primary">New</button>
+                        <button class="btn btn-primary">Save</button>
+                        <button class="btn btn-primary">Clear</button>
+                    </div>
+                </div>
+             <hr />
+               <div class="col-sm-12">
+                    <div ui-grid="vm.gridNotification" class="grid" ui-grid-auto-resize ui-grid-pinning>
+
+                    </div>
+               </div>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
+

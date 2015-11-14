@@ -6,36 +6,25 @@ angular.module('ngo').config(appRoute);
 appRoute.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function appRoute($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.when("", "/page1");
+    $urlRouterProvider.when("", "/home");
 
-    $stateProvider
-       .state("page1", {
-           url: "/page1",
-           templateUrl: "app/sms/Index1.html"
-       })
-       .state("page2", {
-           url: "/page2",
-           title: "sensSMS",
-           templateUrl: "app/sms/sendSms.html",
-           controller: "sendSms",
-           controllerAs: "vm"
-       })
-.state("login", {
-    url: "/login",
-    templateUrl: "app/login/login.html",
-    controller: "login",
-    controllerAs: "vm"
-});
-    //committees
-   // $locationProvider.html5Mode(true);
-
-    //$urlRouterProvider.when('', '/')
-    // $urlRouterProvider.when(window.virtualDirectory + '/', $state.go("dashboard"));
-
-    //$urlRouterProvider.otherwise(function ($injector, $location) {
-    //    $injector.invoke(['$state', function ($state) {
-    //        $state.go('page1');
-    //    }]);
-    //});
+    $stateProvider.state("home", {
+        url: "/home",
+        templateUrl: "app/home/Home.html"
+    });
+    $stateProvider.state("admin", {
+        url: "/admin",
+        title: "admin",
+        templateUrl: "app/admin/admin.html"
+        //controller: "sendSms",
+        //controllerAs: "vm"
+    });
+    $stateProvider.state("admin.notification", {
+        url: "/notification",
+        title: "notification",
+        templateUrl: "app/masters/notification.html",
+        controller: "notification",
+        controllerAs: "vm"
+    });
 
 }
