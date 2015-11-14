@@ -10,6 +10,11 @@ function TeacherReg($state, $scope) {
      { CountryId: 2, Name: 'USA' }
     ];
 
+    $scope.genderList = [
+   { genderId: 1, Name: 'Male' },
+   { genderId: 2, Name: 'Female' }
+    ];
+
     $scope.cityList = [];
 
     $scope.$watch('user.country', function (newVal, oldVal) {
@@ -32,7 +37,7 @@ function TeacherReg($state, $scope) {
         // Set the 'submitted' flag to true
         $scope.submitted = true;
 
-        if ($scope.userForm.$valid) {
+        if ($scope.RegForm.$valid) {
             alert("Form is valid!");
         }
         else {
