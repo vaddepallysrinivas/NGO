@@ -7,11 +7,11 @@ function notification($state, $scope) {
 
     var vm = {
         model: {},
-        intit:intit,
+        intit: intit,
         getNotificationsList: getNotificationsList
     };
 
-    init();
+    intit();
 
     return vm;
 
