@@ -10,8 +10,20 @@ namespace DBLibrary
 {
     public class DBLibrary :IDBLibrary
     {
+        private string strConnection;
 
-        public Object ExecuteQueryNonQuery(string strConnection, string sFunctionName, SqlParameter[] listInParam)
+        public string StrConnection
+        {
+            get
+            {
+                return System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString(); ;
+            }
+            set
+            {
+                strConnection = value;                
+            }
+        }
+        public Object ExecuteQueryNonQuery(string sFunctionName, SqlParameter[] listInParam)
         {
 
             SqlParameter param; ;
@@ -59,7 +71,7 @@ namespace DBLibrary
             }
         }
 
-        public void ExecuteQuery(string strConnection, string StoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int TimeOut)
+        public void ExecuteQuery(string StoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int TimeOut)
         {
             SqlConnection SqlConn = new SqlConnection(strConnection);
             SqlConn.Open();
@@ -101,7 +113,7 @@ namespace DBLibrary
             MySQLCommand.ExecuteNonQuery();
         }
 
-        public  void ExecuteQueryIData(string strConnection, DataTable dt, DataSet dsResult, string sStoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int iTimeOut)
+        public  void ExecuteQueryIData(DataTable dt, DataSet dsResult, string sStoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int iTimeOut)
         {
             SqlParameter param;
             SqlCommand cmd = new SqlCommand();
@@ -182,7 +194,7 @@ namespace DBLibrary
         }
 
 
-        public void ExecuteQueryData(string strConnection , DataTable dt, DataSet dsResult, string sStoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int iTimeOut)
+        public void ExecuteQueryData(DataTable dt, DataSet dsResult, string sStoredProcName, SqlParameter[] listInParam, SqlParameter[] listOutParam, int iTimeOut)
         {
 
             SqlConnection conn = new SqlConnection(strConnection);
@@ -261,7 +273,7 @@ namespace DBLibrary
             }
         }
 
-        public void ExecuteQuery(string strConnection,string qury)
+        public void ExecuteQuery(string qury)
         {
             SqlConnection SqlConn = new SqlConnection(strConnection);
             if (ConnectionState.Closed == SqlConn.State)
@@ -270,7 +282,7 @@ namespace DBLibrary
             MySQLCommand.ExecuteNonQuery();
         }
 
-        public Object  ExecuteSclar(string strConnection, string qury)
+        public Object  ExecuteSclar(string qury)
         {
             SqlConnection SqlConn = new SqlConnection(strConnection);
             if(ConnectionState.Closed==SqlConn.State)

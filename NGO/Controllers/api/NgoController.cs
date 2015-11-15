@@ -13,19 +13,19 @@ namespace NGO.Controllers.api
     public class NgoController : ApiController
     {
 
-        //NgoDataOperations obj;
-        //public  NgoController()
-        //{
-        //    obj = new NgoDataOperations();
-        //}
+        NgoDataOperations obj;
+        public NgoController()
+        {
+            obj = new NgoDataOperations();
+        }
 
-        //[Route("getNotificationsList")]
-        //[HttpPost]
-        //public List<Notification> GetNotificationsList()
-        //{
-        //    return ////obj.GetCompensationInfo();
-         
-        //}
+        [Route("insertNotification")]
+        [HttpPost]
+        public int  InsertNotification([FromBody] Notification obj)
+        {
+
+            return 1;
+        }
 
       
     }

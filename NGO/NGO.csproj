@@ -42,6 +42,12 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DBLibrary">
+      <HintPath>..\DBLibrary\bin\Debug\DBLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\DBLibrary\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -160,7 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\NgoController.cs" />
-    <Compile Include="BusinessLayer\NgoDataOperations.cs" />
+    <Compile Include="fonts\BusinessLayer\NgoDataOperations.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAcessLayer\NgoDbOperations.cs" />
     <Compile Include="Global.asax.cs">

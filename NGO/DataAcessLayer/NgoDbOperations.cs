@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using DBLibrary;
+using DBLibrary;
 using System.Data.SqlClient;
 using System.Data;
 using System.Xml;
@@ -13,7 +13,7 @@ namespace NGO.DataAcessLayer
     public class NgoDbOperations
     {
 
-        //DBLibrary.DBLibrary lobj = new DBLibrary.DBLibrary();
+        DBLibrary.DBLibrary lobj = new DBLibrary.DBLibrary();
         DataTable dt;
         XmlDocument xml;
         string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString();
@@ -39,6 +39,11 @@ namespace NGO.DataAcessLayer
             //{
 
             //}
+
+            NGODBEntities obj = new NGODBEntities();
+
+           
+
             return lst;
         }
 
