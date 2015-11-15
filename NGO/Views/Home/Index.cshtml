@@ -1,26 +1,29 @@
 ﻿@using System.Web.Optimization
 <html ng-app="ngo">
 <head>
+    <base href="/" target="_blank">
     <title>Vignan Youth</title>
+
     @Styles.Render("~/content/css")
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" ng-controller="index as vm">
+
         <div class="row">
-          
-                <div class="col-sm-1">
+
+            <div class="col-sm-1">
                 <img src="~/images/vivekananda.jpg" height="75" width="80" />
             </div>
             <div class="col-sm-10">
                 <div align="center">
                     <img src="~/images/homelogo.jpg" height="75" width="900" />
-                  @*  <h1><font color="red"><b>VIGNAN YOUTH ORGANIZATION</font></b></h1>*@
+                    @*  <h1><font color="red"><b>VIGNAN YOUTH ORGANIZATION</font></b></h1>*@
                     <hr />
                 </div>
             </div>
 
-           <div class="col-sm-1">
+            <div class="col-sm-1">
                 <img src="~/images/flag2.jpg" height="75" width="80" />
             </div>
 
@@ -28,6 +31,7 @@
         </div>
 
         <div class="row">
+
             <nav role="navigation" class="navbar navbar-inverse">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -46,6 +50,12 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a ui-sref="home" href="/">Home</a></li>
                         <li><a href="#">Profile</a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Teacher <b class="caret"></b></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a ui-sref="Teacher" href="/">Registation</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Messages <b class="caret"></b></a>
                             <ul role="menu" class="dropdown-menu">
@@ -71,6 +81,7 @@
         <div class="row">
             <div ui-view=""></div>
         </div>
+
         <hr />
         <footer align="center">
             <p>Posted by: Naveen</p>

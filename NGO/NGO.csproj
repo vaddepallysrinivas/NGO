@@ -114,9 +114,13 @@
     <Content Include="app\directive\customDatePicker.html" />
     <Content Include="app\directive\customDatePicker.js" />
     <Content Include="app\home\Home.html" />
+    <Content Include="app\index.js" />
     <Content Include="app\masters\notification.html" />
     <Content Include="app\masters\notification.js" />
     <Content Include="app\masters\notificationService.js" />
+    <Content Include="app\Teacher\Teacher.html" />
+    <Content Include="app\Teacher\Registration.html" />
+    <Content Include="app\Teacher\TeacherReg.js" />
     <Content Include="content\bootstrapCss\app.css" />
     <Content Include="content\bootstrapCss\bootstrap-datetimepicker.min.css" />
     <Content Include="content\bootstrapCss\bootstrap-theme.css" />
