@@ -3,3 +3,11 @@ D:\ddd\DBLibrary\DBLibrary\bin\Debug\DBLibrary.pdb
 D:\ddd\DBLibrary\DBLibrary\obj\Debug\DBLibrary.csprojResolveAssemblyReference.cache
 D:\ddd\DBLibrary\DBLibrary\obj\Debug\DBLibrary.dll
 D:\ddd\DBLibrary\DBLibrary\obj\Debug\DBLibrary.pdb
+D:\GIT\NGO\DBLibrary\bin\Debug\DBLibrary.dll.config
+D:\GIT\NGO\DBLibrary\bin\Debug\DBLibrary.dll
+D:\GIT\NGO\DBLibrary\bin\Debug\DBLibrary.pdb
+D:\GIT\NGO\DBLibrary\bin\Debug\EntityFramework.dll
+D:\GIT\NGO\DBLibrary\bin\Debug\EntityFramework.xml
+D:\GIT\NGO\DBLibrary\obj\Debug\DBLibrary.csprojResolveAssemblyReference.cache
+D:\GIT\NGO\DBLibrary\obj\Debug\DBLibrary.dll
+D:\GIT\NGO\DBLibrary\obj\Debug\DBLibrary.pdb

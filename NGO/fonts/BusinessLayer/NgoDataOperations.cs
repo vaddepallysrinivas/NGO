@@ -16,10 +16,9 @@ namespace NGO.BusinessLayer
             obj = new NgoDbOperations();
         }
 
-        //public List<Notification> GetNotificationsList()
-        //{
-            
-
-        //}
+        public IEnumerable<Notification> GetNotificationsList()
+        {
+           return obj.GetNotificationsList();
+        }
     }
 }

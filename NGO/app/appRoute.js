@@ -26,11 +26,5 @@ function appRoute($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: "notification",
         controllerAs: "vm"
     });
-    $stateProvider.state("Teacher", {
-        url: "/TeacherRegistration",
-        title: "registation",
-        templateUrl: "app/Teacher/Registration.html",
-        controller: "TeacherReg"//,
-        //controllerAs: "vm"
-    });
+    
 }

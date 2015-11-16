@@ -14,7 +14,7 @@ function notificationService($http) {
 
     function getNotificationsList() {
         //  alert();
-        return $http.get("bcd/ae/note");
+        return $http.get("ngodata/getNotificationsList");
     }
 
 

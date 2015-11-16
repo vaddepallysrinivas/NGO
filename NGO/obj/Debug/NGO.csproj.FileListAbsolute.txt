@@ -92,3 +92,7 @@ C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\System.Web.Mvc.xml
 C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\obj\Debug\NGO.csprojResolveAssemblyReference.cache
 C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\obj\Debug\NGO.dll
 C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\obj\Debug\NGO.pdb
+D:\GIT\NGO\NGO\bin\DBLibrary.dll
+D:\GIT\NGO\NGO\bin\EntityFramework.dll
+D:\GIT\NGO\NGO\bin\DBLibrary.pdb
+D:\GIT\NGO\NGO\bin\EntityFramework.xml

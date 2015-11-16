@@ -13,6 +13,7 @@ namespace NGO
     {
         protected void Application_Start()
         {
+            WebApiConfig.Register(GlobalConfiguration.Configuration);  
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
