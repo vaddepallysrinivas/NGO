@@ -8,43 +8,27 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Xml;
 
+
 namespace NGO.DataAcessLayer
 {
     public class NgoDbOperations
     {
 
-        DBLibrary.DBLibrary lobj = new DBLibrary.DBLibrary();
-        DataTable dt;
-        XmlDocument xml;
-        string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString();
+        private DBLibrary.DBLibrary lobj = new DBLibrary.DBLibrary();
+        private NGODBEntities lobj1 = new NGODBEntities();
+        private DataTable dt;
+        private XmlDocument xml;
+        private string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString();
 
-        public List<Notification> GetNotificationsList()
+        public IEnumerable<Notification> GetNotificationsList()
         {
-            List<Notification> lst = new List<Notification>();
-            //SqlParameter param = new SqlParameter("@err_msg", SqlDbType.VarChar, 500);
-            //lobj.ExecuteQueryData(
 
-            //                 ConnectionString
-            //                 , dt
-            //                 , null
-            //                 , "proc_Atheniticate_Hotel"
-            //                 , new SqlParameter[] { new SqlParameter("@xml", xml.InnerXml), 
-            //                                        new SqlParameter("@type", 1) 
-            //                                       }
-            //                 , null
-            //                 , 500
-            //                 );
 
-            //if (param.Value.ToString() != null)
-            //{
 
-            //}
 
-            NGODBEntities obj = new NGODBEntities();
+            var result = lobj1.Database.SqlQuery<Notification>("exec proc_Notifications @xml=null,@type=3").ToList();
 
-           
-
-            return lst;
+            return result;
         }
 
 

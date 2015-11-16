@@ -1,2 +1,2 @@
 ﻿
-angular.module("ngo", ['ui.router','ui.bootstrap']);
+angular.module("ngo", ['ngAnimate', 'ngTouch','ui.router','ui.bootstrap','ui.grid']);

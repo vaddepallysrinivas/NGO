@@ -19,6 +19,8 @@ namespace NGO.Controllers.api
             obj = new NgoDataOperations();
         }
 
+
+        #region notifications
         [Route("insertNotification")]
         [HttpPost]
         public int  InsertNotification([FromBody] Notification obj)
@@ -27,6 +29,15 @@ namespace NGO.Controllers.api
             return 1;
         }
 
-      
+        [Route("getNotificationsList")]
+        public IEnumerable<Notification> GetNotificationsList()
+        {
+
+            return obj.GetNotificationsList();
+        }
+
+        #endregion
+
+
     }
 }

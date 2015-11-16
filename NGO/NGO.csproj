@@ -120,13 +120,14 @@
     <Content Include="app\directive\customDatePicker.html" />
     <Content Include="app\directive\customDatePicker.js" />
     <Content Include="app\home\Home.html" />
-    <Content Include="app\index.js" />
     <Content Include="app\masters\notification.html" />
     <Content Include="app\masters\notification.js" />
     <Content Include="app\masters\notificationService.js" />
     <Content Include="app\Teacher\Teacher.html" />
     <Content Include="app\Teacher\Registration.html" />
     <Content Include="app\Teacher\TeacherReg.js" />
+    <Content Include="content\angularCss\ui-grid-unstable.css" />
+    <Content Include="content\angularCss\ui-grid.css" />
     <Content Include="content\bootstrapCss\app.css" />
     <Content Include="content\bootstrapCss\bootstrap-datetimepicker.min.css" />
     <Content Include="content\bootstrapCss\bootstrap-theme.css" />
@@ -149,14 +150,19 @@
     <Content Include="images\new.gif" />
     <Content Include="images\success.jpg" />
     <Content Include="images\vivekananda.jpg" />
+    <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-touch.js" />
     <Content Include="scripts\angular\angular-ui-router.min.js" />
     <Content Include="scripts\angular\angular.min.js" />
+    <Content Include="scripts\angular\ui-grid.js" />
+    <Content Include="scripts\angular\ui-grid.min.js" />
     <Content Include="scripts\bootstrapJs\bootstrap-datetimepicker.js" />
     <Content Include="scripts\bootstrapJs\bootstrap-datetimepicker.min.js" />
     <Content Include="scripts\bootstrapJs\bootstrap.min.js" />
     <Content Include="scripts\bootstrapJs\moment.js" />
     <Content Include="scripts\bootstrapJs\ui-bootstrap-tpls-0.11.2.js" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\angular\ui-grid-unstable.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
