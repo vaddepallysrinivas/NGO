@@ -96,3 +96,9 @@ D:\GIT\NGO\NGO\bin\DBLibrary.dll
 D:\GIT\NGO\NGO\bin\EntityFramework.dll
 D:\GIT\NGO\NGO\bin\DBLibrary.pdb
 D:\GIT\NGO\NGO\bin\EntityFramework.xml
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\DBLibrary.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\DBLibrary.pdb
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\EntityFramework.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\EntityFramework.SqlServer.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\EntityFramework.xml
+C:\Users\Kranthi-PC\Source\Repos\NGO\NGO\bin\EntityFramework.SqlServer.xml

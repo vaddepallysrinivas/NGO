@@ -22,17 +22,15 @@ namespace DBLibrary
     
         public string Code { get; set; }
         public string MandalName { get; set; }
-        public string ZoneId { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public int Mandalid { get; set; }
-        public string DistrictCode { get; set; }
+        public string DitrictCode { get; set; }
     
-        public virtual ICollection<tbl_Address> tbl_Address { get; set; }
         public virtual tbl_District tbl_District { get; set; }
-        public virtual tbl_Zone tbl_Zone { get; set; }
+        public virtual ICollection<tbl_Address> tbl_Address { get; set; }
         public virtual ICollection<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     }
 }

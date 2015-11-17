@@ -35,8 +35,8 @@ namespace DBLibrary
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
     
-        public virtual ICollection<tbl_Address> tbl_Address { get; set; }
         public virtual tbl_Gender tbl_Gender { get; set; }
+        public virtual ICollection<tbl_Address> tbl_Address { get; set; }
         public virtual ICollection<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     }
 }

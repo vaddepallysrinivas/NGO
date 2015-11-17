@@ -18,7 +18,22 @@ namespace NGO.BusinessLayer
 
         public IEnumerable<Notification> GetNotificationsList()
         {
-           return obj.GetNotificationsList();
+            return obj.GetNotificationsList();
+        }
+
+        internal IEnumerable<Districts> GetDistricts()
+        {
+            return obj.GetDistricts();
+        }
+
+        internal IEnumerable<Zones> GetZones(Models.IteamID DistrictID)
+        {
+            return obj.GetZone(DistrictID);
+        }
+
+        internal IEnumerable<Mandals> GetMandals(IteamID ZoneID)
+        {
+            return obj.GetMandal(ZoneID);
         }
     }
 }

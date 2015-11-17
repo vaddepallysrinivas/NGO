@@ -19,4 +19,25 @@ namespace NGO.Models
         public int? ModifiedBy { set; get; }
         public DateTime? ModifiedDate { set; get; }
     }
+
+    public class IteamID
+    {
+        public string ID { get; set; }
+    }
+
+    public class Districts
+    {
+        public string Code { get; set; }
+        public string DistrictName { get; set; }
+    }
+    public class Zones
+    {
+        public string Code { get; set; }
+        public string ZoneName { get; set; }
+    }
+    public class Mandals
+    {
+        public string Code { get; set; }
+        public string MandalName { get; set; }
+    }
 }

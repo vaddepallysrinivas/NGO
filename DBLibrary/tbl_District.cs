@@ -28,8 +28,10 @@ namespace DBLibrary
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public int Districtid { get; set; }
+        public string zonecode { get; set; }
     
         public virtual ICollection<tbl_Address> tbl_Address { get; set; }
+        public virtual tbl_Zone tbl_Zone { get; set; }
         public virtual ICollection<tbl_Mandal> tbl_Mandal { get; set; }
         public virtual ICollection<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     }

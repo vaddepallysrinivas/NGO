@@ -1,10 +1,30 @@
 ﻿'use strict';
 
 angular.module('ngo').controller('TeacherReg', TeacherReg);
-TeacherReg.$inject = ['$state', '$scope'];
+TeacherReg.$inject = ['$state', '$scope', 'TeacherRegSercice'];
 
 
-function TeacherReg($state, $scope) {
+function TeacherReg($state, $scope, TeacherRegSercice) {
+
+    $scope.init = function () {
+        TeacherRegSercice.getDistricts().then(function (res) {
+            $scope.schoolDistrictList = res.data;
+        });
+    }
+
+    $scope.init();
+
+    $scope.loadZoneMandals = function (districtCode) {
+        TeacherRegSercice.getZones(districtCode).then(function (res) {
+            $scope.ScholZoneList = res.data;
+        });
+        TeacherRegSercice.getMandals(districtCode).then(function (res) {
+            $scope.schoolMandalList = res.data;
+        });
+    }
+
+
+
     $scope.countryList = [
      { CountryId: 1, Name: 'India' },
      { CountryId: 2, Name: 'USA' }

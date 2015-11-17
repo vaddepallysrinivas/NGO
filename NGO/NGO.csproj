@@ -46,7 +46,10 @@
       <HintPath>..\DBLibrary\bin\Debug\DBLibrary.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\DBLibrary\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
@@ -126,6 +129,7 @@
     <Content Include="app\Teacher\Teacher.html" />
     <Content Include="app\Teacher\Registration.html" />
     <Content Include="app\Teacher\TeacherReg.js" />
+    <Content Include="app\Teacher\TeacherRegService.js" />
     <Content Include="content\angularCss\ui-grid-unstable.css" />
     <Content Include="content\angularCss\ui-grid.css" />
     <Content Include="content\bootstrapCss\app.css" />
@@ -171,6 +175,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\Districts.cs" />
     <Compile Include="Controllers\api\NgoController.cs" />
     <Compile Include="fonts\BusinessLayer\NgoDataOperations.cs" />
     <Compile Include="Controllers\HomeController.cs" />

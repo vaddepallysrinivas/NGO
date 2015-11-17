@@ -31,6 +31,20 @@ namespace NGO.DataAcessLayer
             return result;
         }
 
-
+        public IEnumerable<Districts> GetDistricts()
+        {
+            List<Districts> result = lobj1.tbl_District.Select(x => new Districts() { Code = x.Code, DistrictName = x.DistrictName }).ToList();
+            return result;
+        }
+        public IEnumerable<Zones> GetZone(IteamID DistrictID)
+        {
+            List<Zones> result = lobj1.tbl_Zone.Select(x => new Zones() { Code = x.Code, ZoneName = x.ZoneName }).ToList();
+            return result;
+        }
+        public IEnumerable<Mandals> GetMandal(IteamID ZoneID)
+        {
+            List<Mandals> result = lobj1.tbl_Mandal.Where(x => x.Code == ZoneID.ID).Select(x => new Mandals() { Code = x.Code, MandalName = x.MandalName }).ToList();
+            return result;
+        }
     }
 }

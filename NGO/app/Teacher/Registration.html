@@ -1,102 +1,128 @@
 ﻿<div class="container">
-    <div class="col-sm-8 col-sm-offset-2">
 
-        <!-- PAGE HEADER -->
-        <div class="page-header"><h1>Teacher Registration form</h1></div>
+    <!-- PAGE HEADER -->
+    <div class="page-header"><h1>Teacher Registration form</h1></div>
 
-        <form name="RegForm" novalidate>
+    <form name="RegForm" novalidate>
+        <div>
 
-            <!-- FIRST NAME -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.firstName.$invalid && (RegForm.firstName.$dirty || submitted)}">
-                <label>First Name</label>
-                <input type="text" name="firstName" class="form-control" ng-model="user.firstName" placeholder="First Name" ng-required="true">
-                <p ng-show="RegForm.firstName.$error.required && (RegForm.firstName.$dirty || submitted)" class="help-block">First name is required.</p>
+            <h3>Personal Details</h3>
+            <div>
+                <div class="col-sm-4">
+
+                    <!-- FIRST NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.firstName.$invalid && (RegForm.firstName.$dirty || submitted)}">
+                        <label>First Name</label>
+                        <input type="text" name="firstName" class="form-control" ng-model="user.firstName" placeholder="First Name" ng-required="true">
+                        <p ng-show="RegForm.firstName.$error.required && (RegForm.firstName.$dirty || submitted)" class="help-block">First name is required.</p>
+                    </div>
+
+                    <!-- Middle NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.middleName.$invalid && (RegForm.middleName.$dirty || submitted)}">
+                        <label>Middle Name</label>
+                        <input type="text" name="middleName" class="form-control" ng-model="user.middleName" placeholder="Middle Name" ng-required="true">
+                        <p ng-show="RegForm.middle.$error.required && (RegForm.middle.$dirty || submitted)" class="help-block">Middle name is required.</p>
+                    </div>
+
+                    <!-- Last NAME -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.lastName.$invalid && (RegForm.lastName.$dirty || submitted)}">
+                        <label>Last Name</label>
+                        <input type="text" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" ng-required="true">
+                        <p ng-show="RegForm.lastName.$error.required && (RegForm.lastName.$dirty || submitted)" class="help-block">Last name is required.</p>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.email.$invalid && (RegForm.email.$dirty || submitted)}">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email Address" ng-required="true">
+                        <p ng-show="RegForm.email.$error.required && (RegForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
+                        <p ng-show="RegForm.email.$error.email && (RegForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.gender.$invalid  && (RegForm.gender.$dirty || submitted)}">
+                        <label>Gender</label>
+                        <select name="gender" class="form-control"
+                                ng-model="user.selectedGenderId"
+                                ng-options="gender.genderId as gender.Name for gender in genderList"
+                                ng-required="true">
+                            <option value=''>Select Gender</option>
+                        </select>
+                        <p ng-show="RegForm.gender.$error.required  && (RegForm.gender.$dirty || submitted)" class="help-block">Select Gender.</p>
+                    </div>
+
+                    <!-- CONTACTNO -->
+                    <div class="form-group" ng-class="{ 'has-error' : RegForm.contactno.$invalid  && (RegForm.contactno.$dirty || submitted) }">
+                        <label>Contact No</label>
+                        <input type="text" name="contactno" class="form-control" ng-model="user.contactno" placeholder="Your Contact No" ng-pattern="/^[789]\d{9}$/" maxlength="10" ng-required="true">
+                        <p ng-show="RegForm.contactno.$error.pattern  && (RegForm.contactno.$dirty || submitted)" class="help-block">Enter a valid Contact Number.</p>
+                        <p ng-show="RegForm.contactno.$error.required  && (RegForm.contactno.$dirty || submitted)" class="help-block">Enter Contact Number </p>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-4" style="position:relative;margin-top:-57px ">
 
-            <!-- Middle NAME -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.middleName.$invalid && (RegForm.middleName.$dirty || submitted)}">
-                <label>Middle Name</label>
-                <input type="text" name="middleName" class="form-control" ng-model="user.middleName" placeholder="Middle Name" ng-required="true">
-                <p ng-show="RegForm.middle.$error.required && (RegForm.middle.$dirty || submitted)" class="help-block">Middle name is required.</p>
+            <div>
+                <div> <h3>School Details</h3></div>
+                <!-- School Address -->
+                <div class="form-group" ng-class="{ 'has-error' : RegForm.schoolAdd.$invalid  && (RegForm.schoolAdd.$dirty || submitted) }">
+                    <label>Address</label>
+                    <textarea name="schoolAdd" rows="4" class="form-control" ng-model="user.schoolAdd" placeholder="School Address" maxlength="1000" ng-required="true"></textarea>
+                    <p ng-show="RegForm.schoolAdd.$error.required  && (RegForm.schoolAdd.$dirty || submitted)" class="help-block">Enter School Address</p>
+                </div>
+
+                <!-- District -->
+                <div class="form-group" ng-class="{ 'has-error' : RegForm.schoolDistrict.$invalid  && (RegForm.schoolDistrict.$dirty || submitted)}">
+                    <label>District</label>
+                    <select name="schoolDistrict" class="form-control"
+                            ng-model="user.schoolDistrict"
+                            ng-options="schoolDistrict.code as schoolDistrict.districtName for schoolDistrict in schoolDistrictList"
+                            ng-required="true"
+                            ng-change="loadZoneMandals(user.schoolDistrict)">
+                        <option value=''>Select</option>
+                    </select>
+                    <p ng-show="RegForm.schoolDistrict.$error.required  && (RegForm.schoolDistrict.$dirty || submitted)" class="help-block">Select District.</p>
+                </div>
+
+                <!-- Zone -->
+                <div class="form-group" ng-class="{ 'has-error' : RegForm.ScholZone.$invalid  && (RegForm.ScholZone.$dirty || submitted)}">
+                    <label>Zone</label>
+                    <select name="ScholZone" class="form-control"
+                            ng-model="user.ScholZone"
+                            ng-options="ScholZone.code as ScholZone.zoneName for ScholZone in ScholZoneList"
+                            ng-required="true">
+                        <option value=''>Select</option>
+                    </select>
+                    <p ng-show="RegForm.ScholZone.$error.required  && (RegForm.ScholZone.$dirty || submitted)" class="help-block">Select Zone.</p>
+                </div>
+
+                <!-- Mandal -->
+                <div class="form-group" ng-class="{ 'has-error' : RegForm.schoolMandal.$invalid  && (RegForm.schoolMandal.$dirty || submitted)}">
+                    <label>Mandal</label>
+                    <select name="schoolMandal" class="form-control"
+                            ng-model="user.schoolMandal"
+                            ng-options="schoolMandal.code as schoolMandal.mandalName for schoolMandal in schoolMandalList"
+                            ng-required="true">
+                        <option value=''>Select</option>
+                    </select>
+                    <p ng-show="RegForm.schoolMandal.$error.required  && (RegForm.schoolMandal.$dirty || submitted)" class="help-block">Select Mandal.</p>
+                </div>
+
+                <!-- School village -->
+                <div class="form-group" ng-class="{ 'has-error' : RegForm.schoolVillage.$invalid  && (RegForm.schoolVillage.$dirty || submitted) }">
+                    <label>Village</label>
+                    <input type="text" name="contactno" class="form-control" ng-model="user.schoolVillage" placeholder="School village" maxlength="100" ng-required="true">
+                    <p ng-show="RegForm.schoolVillage.$error.required  && (RegForm.schoolVillage.$dirty || submitted)" class="help-block">Enter School village </p>
+                </div>
+
             </div>
-
-            <!-- Last NAME -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.lastName.$invalid && (RegForm.lastName.$dirty || submitted)}">
-                <label>Last Name</label>
-                <input type="text" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" ng-required="true">
-                <p ng-show="RegForm.lastName.$error.required && (RegForm.lastName.$dirty || submitted)" class="help-block">Last name is required.</p>
-            </div>
-
-            <!-- PASSWORD -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.password.$invalid && (RegForm.password.$dirty || submitted)}">
-                <label>Password</label>
-                <input type="Password" name="password" class="form-control" ng-model="user.password" placeholder="Your Password" ng-required="true">
-                <p ng-show="RegForm.password.$error.required && (RegForm.password.$dirty || submitted)" class="help-block">Your password is required.</p>
-            </div>
-
-            <!-- CONFIRM PASSWORD -->
-            <div class="form-group" ng-class="{ 'has-error' : (RegForm.confirmPassword.$invalid && (RegForm.confirmPassword.$dirty || submitted))||(user.password!=user.confirmPassword &&!RegForm.confirmPassword.$error.required) }">
-                <label>Confirm Password</label>
-                <input type="Password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Your Password" ng-required="true">
-                <p ng-show="RegForm.confirmPassword.$error.required && (RegForm.confirmPassword.$dirty || submitted)" class="help-block">Your confirm password is required.</p>
-                <p ng-show="(user.password!=user.confirmPassword &&!RegForm.confirmPassword.$error.required)  && (RegForm.confirmPassword.$dirty || submitted)" class="help-block">Confirm password doesnot match.</p>
-            </div>
-
-            <!-- EMAIL -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.email.$invalid && (RegForm.email.$dirty || submitted)}">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Your Email Address" ng-required="true">
-                <p ng-show="RegForm.email.$error.required && (RegForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
-                <p ng-show="RegForm.email.$error.email && (RegForm.email.$dirty || submitted)" class="help-block">Enter a valid email.</p>
-            </div>
-
-            <!-- Gender -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.gender.$invalid  && (RegForm.gender.$dirty || submitted)}">
-                <label>Gender</label>
-                <select name="gender" class="form-control"
-                        ng-model="user.selectedGenderId"
-                        ng-options="gender.genderId as gender.Name for gender in genderList"
-                        ng-required="true">
-                    <option value=''>Select Gender</option>
-                </select>
-                <p ng-show="RegForm.gender.$error.required  && (RegForm.gender.$dirty || submitted)" class="help-block">Select Gender.</p>
-            </div>
-
-            <!-- CONTACTNO -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.contactno.$invalid  && (RegForm.contactno.$dirty || submitted) }">
-                <label>Contact No</label>
-                <input type="text" name="contactno" class="form-control" ng-model="user.contactno" placeholder="Your Contact No" ng-pattern="/^[789]\d{9}$/" maxlength="10" ng-required="true">
-                <p ng-show="RegForm.contactno.$error.pattern  && (RegForm.contactno.$dirty || submitted)" class="help-block">Enter a valid Contact Number.</p>
-                <p ng-show="RegForm.contactno.$error.required  && (RegForm.contactno.$dirty || submitted)" class="help-block">Enter Contact Number </p>
-            </div>
-
-            <!-- COUNTRY -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.country.$invalid  && (RegForm.country.$dirty || submitted)}">
-                <label>Country</label>
-                <select name="country" class="form-control"
-                        ng-model="user.country"
-                        ng-options="country.CountryId as country.Name for country in countryList"
-                        ng-required="true">
-                    <option value=''>Select</option>
-                </select>
-                <p ng-show="RegForm.country.$error.required  && (RegForm.country.$dirty || submitted)" class="help-block">Select country.</p>
-            </div>
-
-            <!-- CITY -->
-            <div class="form-group" ng-class="{ 'has-error' : RegForm.city.$invalid  && (RegForm.city.$dirty || submitted)}">
-                <label>City</label>
-                <select name="city" class="form-control"
-                        ng-model="user.city"
-                        ng-options="city.CityId as city.Name for city in cityList"
-                        ng-required="true">
-                    <option value=''>Select</option>
-                </select>
-                <p ng-show="RegForm.city.$error.required  && (RegForm.city.$dirty || submitted)" class="help-block">Select city.</p>
-            </div>
-
-            <!-- ng-disabled FOR ENABLING AND DISABLING SUBMIT BUTTON -->
-            <!--<button type="submit" class="btn btn-primary" ng-disabled="RegForm.$invalid">Register</button>-->
+        </div>
+        <div class="col-sm-12">
             <button type="submit" class="btn btn-primary" ng-click="submitForm()">Register</button>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 </div>

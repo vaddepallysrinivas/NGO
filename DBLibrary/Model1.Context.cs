@@ -28,7 +28,6 @@ namespace DBLibrary
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<tbl_Address> tbl_Address { get; set; }
         public DbSet<tbl_Cast> tbl_Cast { get; set; }
         public DbSet<tbl_District> tbl_District { get; set; }
         public DbSet<tbl_Gender> tbl_Gender { get; set; }
@@ -36,12 +35,13 @@ namespace DBLibrary
         public DbSet<tbl_Notifications> tbl_Notifications { get; set; }
         public DbSet<tbl_Religion> tbl_Religion { get; set; }
         public DbSet<tbl_Roles> tbl_Roles { get; set; }
-        public DbSet<tbl_schoolDetails> tbl_schoolDetails { get; set; }
         public DbSet<tbl_Student_details> tbl_Student_details { get; set; }
         public DbSet<tbl_teacher_details> tbl_teacher_details { get; set; }
         public DbSet<tbl_Users> tbl_Users { get; set; }
         public DbSet<tbl_Village> tbl_Village { get; set; }
         public DbSet<tbl_Zone> tbl_Zone { get; set; }
+        public DbSet<tbl_Address> tbl_Address { get; set; }
+        public DbSet<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     
         public virtual ObjectResult<proc_Notifications_Result> proc_Notifications(string xml, Nullable<int> type)
         {

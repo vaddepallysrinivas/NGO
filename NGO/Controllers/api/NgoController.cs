@@ -23,7 +23,7 @@ namespace NGO.Controllers.api
         #region notifications
         [Route("insertNotification")]
         [HttpPost]
-        public int  InsertNotification([FromBody] Notification obj)
+        public int InsertNotification([FromBody] Notification obj)
         {
 
             return 1;
@@ -35,6 +35,27 @@ namespace NGO.Controllers.api
 
             return obj.GetNotificationsList();
         }
+
+        [Route("getDistricts")]
+        public IEnumerable<Districts> GetDistricts()
+        {
+            return obj.GetDistricts();
+        }
+
+        [HttpPost]
+        [Route("loadZones")]
+        public IEnumerable<Zones> LoadZones([FromBody]IteamID DistrictID)
+        {
+            return obj.GetZones(DistrictID);
+        }
+
+        [HttpPost]
+        [Route("loadMandals")]
+        public IEnumerable<Mandals> LoadMandals([FromBody]IteamID ZoneID)
+        {
+            return obj.GetMandals(ZoneID);
+        }
+
 
         #endregion
 

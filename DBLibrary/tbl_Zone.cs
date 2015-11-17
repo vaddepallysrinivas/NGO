@@ -16,8 +16,8 @@ namespace DBLibrary
     {
         public tbl_Zone()
         {
+            this.tbl_District = new HashSet<tbl_District>();
             this.tbl_Address = new HashSet<tbl_Address>();
-            this.tbl_Mandal = new HashSet<tbl_Mandal>();
             this.tbl_schoolDetails = new HashSet<tbl_schoolDetails>();
         }
     
@@ -29,8 +29,8 @@ namespace DBLibrary
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public int Zoneid { get; set; }
     
+        public virtual ICollection<tbl_District> tbl_District { get; set; }
         public virtual ICollection<tbl_Address> tbl_Address { get; set; }
-        public virtual ICollection<tbl_Mandal> tbl_Mandal { get; set; }
         public virtual ICollection<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     }
 }
