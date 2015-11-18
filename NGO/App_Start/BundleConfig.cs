@@ -66,7 +66,7 @@ namespace NGO
                     .Include("~/content/angular-material.min.css")
                 //.Include("~/content/angular-material.css")
                     .Include("~/content/angular-material-grey-theme.css")
-                    .Include("~/content/xeditable.css")
+                  //  .Include("~/content/xeditable.css")
                     .Include("~/content/app.css")
                     .Include("~/content/ngProgress.css")
                     .Include("~/content/isteven-multi-select.css")
