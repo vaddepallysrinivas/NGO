@@ -22,14 +22,13 @@ namespace DBLibrary
         public int NotificationId { get; set; }
         public string code { get; set; }
         public string NotificationText { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public Nullable<int> Del_ind { get; set; }
+        public Nullable<bool> Del_ind { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public decimal FeeAmount { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual ICollection<tbl_Student_details> tbl_Student_details { get; set; }
     }

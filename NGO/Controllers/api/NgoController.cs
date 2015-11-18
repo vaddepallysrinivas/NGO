@@ -35,6 +35,12 @@ namespace NGO.Controllers.api
 
             return obj.GetNotificationsList();
         }
+        [Route("getNotificationCode")]
+        public Notification GetNotificationCode()
+        {
+
+            return obj.GetNotificationCode();
+        }
 
         [Route("getDistricts")]
         public IEnumerable<District> GetDistricts()
@@ -48,7 +54,7 @@ namespace NGO.Controllers.api
         {
             return obj.GetZones(DistrictID);
         }
-       
+
         [HttpPost]
         [Route("loadMandals")]
         public IEnumerable<Mandal> LoadMandals([FromBody]IteamID ZoneID)

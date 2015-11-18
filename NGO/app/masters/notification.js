@@ -10,12 +10,37 @@ function notification($state, $scope, notificationService, uiGridConstants) {
         init: init,
         getNotificationsList: getNotificationsList,
         designGrid: designGrid,
-        gridColumns: gridColumns
+        gridColumns: gridColumns,
+        editRow: editRow,
+        create: create,
+        save: save,
+        clear:clear
+
     };
 
     init();
 
     return vm;
+
+    function save() {
+    }
+    function clear() {
+
+        vm.model.notificationCode = "";
+        vm.model.notificationText = "";
+        vm.model.feeAmount = "";
+        vm.model.isActive = false;
+
+    }
+
+    function create() {
+        clear();
+        notificationService.getNotificationCode().then(function (res) {
+            vm.model.notificationCode = res.data.code;
+        });
+
+    }
+
 
     function init() {
         designGrid();
@@ -30,16 +55,16 @@ function notification($state, $scope, notificationService, uiGridConstants) {
             enableColumnResizing: true,
             enableHorizontalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
             enableVerticalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
-            enableRowSelection: true,
-            enableFiltering: true,
-            enableSelectAll: true,
+            //enableRowSelection: true,
+          //  enableFiltering: true,
+            //enableSelectAll: true,
             selectionRowHeaderWidth: 35,
             rowHeight: 35,
             showGridFooter: true,
-            //onRegisterApi: function (gridApi) {
-            //    vm.model.gridApi = gridApi;
-            //    vm.model.gridApi.selection.on.rowSelectionChanged($scope, bindRowData);
-            //},
+            onRegisterApi: function (gridApi) {
+                vm.model.gridApi = gridApi;
+                // vm.model.gridApi.selection.on.rowSelectionChanged($scope, bindRowData);
+            },
             columnDefs: vm.model.columms
         }
     }
@@ -49,25 +74,43 @@ function notification($state, $scope, notificationService, uiGridConstants) {
     function gridColumns() {
 
         vm.model.columms = [
-              { name: 'NotificationId', displayName: "NotificationId" },
-              { name: 'code', displayName: "code" },
-              { name: 'NotificationText', displayName: "NotificationText" },
-              { name: 'StartDate', displayName: "StartDate" },
-              { name: 'EndDate', displayName: "EndDate" },
-              { name: 'FeeAmount', displayName: "FeeAmount" },
-              { name: 'CreatedBy', displayName: "CreatedBy" },
-              { name: 'CreatedDate', displayName: "CreatedDate" },
-              { name: 'ModifiedBy', displayName: "ModifiedBy" },
-              { name: 'ModifiedDate', displayName: "ModifiedDate" },
-              { name: 'Del_ind', displayName: "Del_ind" }]
+            {
+                name: 'edit',
+                displayName: 'Edit',
+                width: 50,
+                enableColumnMenu: false,
+                pinnedLeft: true,
+                cellTemplate:
+            '<button class="btn btn-primary btn-xs" ng-click="grid.appScope.vm.editRow(row.entity.code,row);" href="#">&nbsp;Edit</button>'
+            },
+             { name: 'code', displayName: "code" },
+            { name: 'notificationText', displayName: "NotificationText" },
+            { name: 'feeAmount', displayName: "FeeAmount" },
+            { name: 'isActive', displayName: "IsActive" },
+            { name: 'createdBy', displayName: "CreatedBy" },
+            { name: 'createdDate', displayName: "CreatedDate" },
+            { name: 'modifiedBy', displayName: "ModifiedBy" },
+            { name: 'modifiedDate', displayName: "ModifiedDate" }]
 
+
+    }
+
+    function editRow(companyContactId, row) {
+        vm.model.notificationCode = row.entity.code;
+        vm.model.notificationText = row.entity.notificationText;
+        vm.model.feeAmount = row.entity.feeAmount;
+        vm.model.isActive = row.entity.isActive;
     }
 
 
 
     function getNotificationsList() {
         notificationService.getNotificationsList().then(function (res) {
-            vm.gridNotifications.data = res;
+            vm.gridNotifications.data = res.data;
+            vm.gridNotifications.columnDefs.forEach(function (colDef) {
+                var numChars = (new String(colDef.name)).length;
+                colDef.width = numChars * 12;
+            });
         });
 
     }

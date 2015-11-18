@@ -7,7 +7,8 @@ notificationService.$inject = ['$http'];
 function notificationService($http) {
 
     var service = {
-        getNotificationsList: getNotificationsList
+        getNotificationsList: getNotificationsList,
+        getNotificationCode: getNotificationCode
     };
 
     return service;
@@ -15,6 +16,10 @@ function notificationService($http) {
     function getNotificationsList() {
         //  alert();
         return $http.get("ngodata/getNotificationsList");
+    }
+    function getNotificationCode() {
+        //  alert();
+        return $http.get("ngodata/getNotificationCode");
     }
 
 

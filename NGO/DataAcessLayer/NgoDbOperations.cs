@@ -23,9 +23,31 @@ namespace NGO.DataAcessLayer
         public IEnumerable<Notification> GetNotificationsList()
         {
 
-            var result = lobj1.Database.SqlQuery<Notification>("exec proc_Notifications @xml=null,@type=3").ToList();
+            List<Notification> result = lobj1.tbl_Notifications.Select(x => new Notification()
+            {
+                Code = x.code,
+                NotificationText = x.NotificationText,
+                FeeAmount = x.FeeAmount,
+                IsActive = x.IsActive,
+                CreatedBy = x.CreatedBy,
+                ModifiedBy = x.ModifiedBy,
+                CreatedDate = x.CreatedDate,
+                ModifiedDate = x.ModifiedDate,
+                Del_ind = x.Del_ind
+
+            }).ToList();
 
             return result;
+
+        }
+
+        public Notification GetNotificationCode()
+        {
+            var max_Query =
+               (from tab1 in lobj1.tbl_Notifications
+                select tab1.NotificationId).Max().ToString();
+            return new Notification() { Code = "Exam" + max_Query };
+
         }
 
         public IEnumerable<District> GetDistricts()

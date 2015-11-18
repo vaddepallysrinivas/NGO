@@ -3,61 +3,58 @@
     <div class="panel panel-default">
         <div class="panel-heading">Notification Master</div>
         <div class="panel-body">
-            <form name="loginForm" class="form-horizontal" novalidate>
+           <form name="myForm" class="form-horizontal" novalidate>
 
+               
                 <div class="form-group">
 
+                    <!-- Code -->
                     <div class="col-sm-3">
-                        <label for="notificationcode" class="control-label">Notification Code</label>
-                        <input type="text" class="form-control" name="notificationcode" ng-model="vm.model.notificationCode" required autofocus>
+                        <label for="notificationCode" class="control-label">Notification Code</label>
+                        <input type="text" class="form-control" readonly name="notificationCode" ng-model="vm.model.notificationCode">
                     </div>
-
+                    <!-- notificatio Text -->
                     <div class="col-sm-6">
-                        <label for="notificationcode" class="control-label">Notification Text</label>
-                        <input type="text" class="form-control" name="notificationcode" ng-model="vm.model.notificationText" required autofocus>
-                    </div>
-
-
-                </div>
-
-                <div class="form-group">
-
-
-                    <div class="col-md-3">
-                        <label for="startDate">Start Date</label>
-                        <div name="startDate" custom-date-picker ng-model="vm.model.startDate" />
-                    </div>
-                    <div class="col-sm-3">
-                         <label for="endDate">End Date</label>
-                        <div name="endDate" custom-date-picker ng-model="vm.model.endDate" />
+                        <label for="notificationText" class="control-label">Notification Text</label>
+                        <input type="text" class="form-control" name="notificationText" ng-model="vm.model.notificationText" required>
+                      <span style="color: red" ng-show="myForm.notificationText.$dirty && myForm.notificationText.$invalid">
+                        <span ng-show="myForm.notificationText.$error.required">Notification Text is required.</span>
+                    </span>
                     </div>
 
 
                 </div>
 
 
+            
                 <div class="form-group">
 
                     <div class="col-sm-3">
                         <label for="notificationcode" class="control-label">Fee Amount</label>
-                        <input type="password" class="form-control" name="feeamout" ng-model="vm.model.feeamout" required>
+                        <input type="text" class="form-control" name="feeAmount" ng-model="vm.model.feeAmount" required>
+                           <span style="color: red" ng-show="myForm.feeAmount.$dirty && myForm.feeAmount.$invalid">
+                        <span ng-show="myForm.feeAmount.$error.required">Fee Amount is Required</span>
+                    </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="notificationcode" class="control-label">Is Active</label>
+                        <input type="checkbox" class="form-control" name="isactive" ng-model="vm.model.isActive" required>
                     </div>
 
                 </div>
-
+                <hr />
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-10">
-                        <button class="btn btn-primary">New</button>
-                        <button class="btn btn-primary">Save</button>
-                        <button class="btn btn-primary">Clear</button>
+                        <button class="btn btn-primary" ng-click="vm.create()">New</button>
+                        <button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+                        <button class="btn btn-primary" ng-click="vm.clear()">Clear</button>
                     </div>
                 </div>
-             <hr />
-               <div class="col-sm-12">
+                <hr />
+                <div class="col-sm-12">
                     <div id="pendindContactsGrid" ui-grid="vm.gridNotifications" ui-grid-resize-columns ui-grid-auto-resize ui-grid-selection class="grid">
-
                     </div>
-               </div>
+                </div>
 
 
             </form>
@@ -65,4 +62,5 @@
     </div>
 
 </div>
+
 

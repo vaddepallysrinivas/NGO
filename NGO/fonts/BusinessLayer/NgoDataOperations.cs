@@ -21,6 +21,12 @@ namespace NGO.BusinessLayer
             return obj.GetNotificationsList();
         }
 
+
+
+        internal Notification GetNotificationCode()
+        {
+            return obj.GetNotificationCode();
+        }
         internal IEnumerable<District> GetDistricts()
         {
             return obj.GetDistricts();

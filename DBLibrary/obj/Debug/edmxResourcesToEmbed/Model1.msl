@@ -70,14 +70,13 @@
     <EntitySetMapping Name="tbl_Notifications">
       <EntityTypeMapping TypeName="NGODBModel.tbl_Notifications">
         <MappingFragment StoreEntitySet="tbl_Notifications">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
-          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="NotificationText" ColumnName="NotificationText" />
           <ScalarProperty Name="code" ColumnName="code" />
           <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
@@ -216,5 +215,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_TeacherReg" FunctionName="NGODBModel.Store.proc_TeacherReg" />
   </EntityContainerMapping>
 </Mapping>

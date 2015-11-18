@@ -1,12 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="NGODBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="NGODBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="NGODBModelStoreContainer">
+    <EntitySet Name="tbl_Address" EntityType="NGODBModel.Store.tbl_Address" store:Type="Tables" store:Schema="dbo" store:Name="tbl_Address">
+      <DefiningQuery>SELECT 
+      [tbl_Address].[Id] AS [Id], 
+      [tbl_Address].[StudentRegno] AS [StudentRegno], 
+      [tbl_Address].[TeacherRegno] AS [TeacherRegno], 
+      [tbl_Address].[Address] AS [Address], 
+      [tbl_Address].[ZoneId] AS [ZoneId], 
+      [tbl_Address].[MondalId] AS [MondalId], 
+      [tbl_Address].[DistrictId] AS [DistrictId], 
+      [tbl_Address].[Village] AS [Village]
+      FROM [dbo].[tbl_Address] AS [tbl_Address]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Cast" EntityType="NGODBModel.Store.tbl_Cast" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_District" EntityType="NGODBModel.Store.tbl_District" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Gender" EntityType="NGODBModel.Store.tbl_Gender" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Mandal" EntityType="NGODBModel.Store.tbl_Mandal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Notifications" EntityType="NGODBModel.Store.tbl_Notifications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Religion" EntityType="NGODBModel.Store.tbl_Religion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Roles" EntityType="NGODBModel.Store.tbl_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_schoolDetails" EntityType="NGODBModel.Store.tbl_schoolDetails" store:Type="Tables" store:Schema="dbo" store:Name="tbl_schoolDetails">
+      <DefiningQuery>SELECT 
+      [tbl_schoolDetails].[Id] AS [Id], 
+      [tbl_schoolDetails].[StudentRegno] AS [StudentRegno], 
+      [tbl_schoolDetails].[TeacherRegno] AS [TeacherRegno], 
+      [tbl_schoolDetails].[schoolName] AS [schoolName], 
+      [tbl_schoolDetails].[schoolAddress] AS [schoolAddress], 
+      [tbl_schoolDetails].[PhNumber] AS [PhNumber], 
+      [tbl_schoolDetails].[ZoneId] AS [ZoneId], 
+      [tbl_schoolDetails].[MondalId] AS [MondalId], 
+      [tbl_schoolDetails].[DistrictId] AS [DistrictId], 
+      [tbl_schoolDetails].[Village] AS [Village]
+      FROM [dbo].[tbl_schoolDetails] AS [tbl_schoolDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Student_details" EntityType="NGODBModel.Store.tbl_Student_details" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_teacher_details" EntityType="NGODBModel.Store.tbl_teacher_details" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Users" EntityType="NGODBModel.Store.tbl_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Village" EntityType="NGODBModel.Store.tbl_Village" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Zone" EntityType="NGODBModel.Store.tbl_Zone" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__tbl_Addre__Distr__37A5467C" Association="NGODBModel.Store.FK__tbl_Addre__Distr__37A5467C">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Monda__38996AB5" Association="NGODBModel.Store.FK__tbl_Addre__Monda__38996AB5">
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Stude__398D8EEE" Association="NGODBModel.Store.FK__tbl_Addre__Stude__398D8EEE">
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Teach__3A81B327" Association="NGODBModel.Store.FK__tbl_Addre__Teach__3A81B327">
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__ZoneI__3B75D760" Association="NGODBModel.Store.FK__tbl_Addre__ZoneI__3B75D760">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Distr__zonec__48CFD27E" Association="NGODBModel.Store.FK__tbl_Distr__zonec__48CFD27E">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_District" EntitySet="tbl_District" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Manda__Ditri__49C3F6B7" Association="NGODBModel.Store.FK__tbl_Manda__Ditri__49C3F6B7">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Distr__3E52440B" Association="NGODBModel.Store.FK__tbl_schoo__Distr__3E52440B">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Monda__3F466844" Association="NGODBModel.Store.FK__tbl_schoo__Monda__3F466844">
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Stude__403A8C7D" Association="NGODBModel.Store.FK__tbl_schoo__Stude__403A8C7D">
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Teach__412EB0B6" Association="NGODBModel.Store.FK__tbl_schoo__Teach__412EB0B6">
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__ZoneI__4222D4EF" Association="NGODBModel.Store.FK__tbl_schoo__ZoneI__4222D4EF">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Stude__Gende__4316F928" Association="NGODBModel.Store.FK__tbl_Stude__Gende__4316F928">
+      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Stude__Notif__440B1D61" Association="NGODBModel.Store.FK__tbl_Stude__Notif__440B1D61">
+      <End Role="tbl_Notifications" EntitySet="tbl_Notifications" />
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_teach__Gende__44FF419A" Association="NGODBModel.Store.FK__tbl_teach__Gende__44FF419A">
+      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Users__RoleI__0519C6AF" Association="NGODBModel.Store.FK__tbl_Users__RoleI__0519C6AF">
+      <End Role="tbl_Roles" EntitySet="tbl_Roles" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+  </EntityContainer>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="tbl_Address">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StudentRegno" Type="varchar" MaxLength="50" />
     <Property Name="TeacherRegno" Type="varchar" MaxLength="50" />
     <Property Name="Address" Type="varchar" MaxLength="1000" />
@@ -19,25 +124,25 @@ warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="CastName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Castid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Castid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="tbl_District">
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="DistrictName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Districtid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Districtid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="zonecode" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbl_Gender">
@@ -51,42 +156,41 @@ warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="MandalName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Mandalid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mandalid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="DitrictCode" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbl_Notifications">
     <Key>
       <PropertyRef Name="code" />
     </Key>
-    <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="code" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="NotificationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="500" />
     <Property Name="NotificationText" Type="varchar(max)" />
-    <Property Name="StartDate" Type="datetime" />
-    <Property Name="EndDate" Type="datetime" />
-    <Property Name="Del_ind" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="FeeAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="FeeAmount" Type="decimal" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Del_ind" Type="bit" />
   </EntityType>
   <EntityType Name="tbl_Religion">
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="ReligionName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Religionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Religionid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="tbl_Roles">
     <Key>
@@ -96,12 +200,13 @@ warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key
     <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
   <EntityType Name="tbl_schoolDetails">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="StudentRegno" Type="varchar" MaxLength="50" />
     <Property Name="TeacherRegno" Type="varchar" MaxLength="50" />
     <Property Name="schoolName" Type="varchar" MaxLength="1000" />
@@ -116,15 +221,15 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     <Key>
       <PropertyRef Name="StudentRegno" />
     </Key>
-    <Property Name="StudentRegno" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="NotificationCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StudentRegno" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NotificationCode" Type="varchar" Nullable="false" MaxLength="500" />
     <Property Name="TeacherRefCode" Type="varchar" MaxLength="50" />
-    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="MiddleName" Type="varchar" MaxLength="50" />
-    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="GenderId" Type="int" />
     <Property Name="Email" Type="varchar" MaxLength="100" />
-    <Property Name="MobileNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="Del_ind" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
@@ -135,15 +240,15 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     <Key>
       <PropertyRef Name="TeacherRegno" />
     </Key>
-    <Property Name="TeacherRegno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TeacherRegno" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
-    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="MiddleName" Type="varchar" MaxLength="50" />
     <Property Name="LastName" Type="varchar" MaxLength="50" />
     <Property Name="GenderId" Type="int" />
-    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="MobileNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="MobileNumber" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="Del_ind" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
@@ -154,43 +259,43 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="RoleId" Type="int" Nullable="false" />
     <Property Name="Del_Ind" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbl_Village">
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="VillageName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Villageid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Villageid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="tbl_Zone">
     <Key>
       <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="ZoneName" Type="varchar" MaxLength="50" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="Zoneid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Zoneid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <Association Name="FK__tbl_Addre__Distr__37A5467C">
-    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
-    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="NGODBModel.Store.tbl_Address" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_District">
         <PropertyRef Name="Code" />
@@ -201,8 +306,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Addre__Monda__38996AB5">
-    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="0..1" />
-    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <End Role="tbl_Mandal" Type="NGODBModel.Store.tbl_Mandal" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="NGODBModel.Store.tbl_Address" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Mandal">
         <PropertyRef Name="Code" />
@@ -213,8 +318,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Addre__Stude__398D8EEE">
-    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="0..1" />
-    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <End Role="tbl_Student_details" Type="NGODBModel.Store.tbl_Student_details" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="NGODBModel.Store.tbl_Address" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Student_details">
         <PropertyRef Name="StudentRegno" />
@@ -225,8 +330,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Addre__Teach__3A81B327">
-    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="0..1" />
-    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <End Role="tbl_teacher_details" Type="NGODBModel.Store.tbl_teacher_details" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="NGODBModel.Store.tbl_Address" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_teacher_details">
         <PropertyRef Name="TeacherRegno" />
@@ -237,8 +342,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Addre__ZoneI__3B75D760">
-    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
-    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <End Role="tbl_Zone" Type="NGODBModel.Store.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="NGODBModel.Store.tbl_Address" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Zone">
         <PropertyRef Name="Code" />
@@ -249,8 +354,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Distr__zonec__48CFD27E">
-    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
-    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="*" />
+    <End Role="tbl_Zone" Type="NGODBModel.Store.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Zone">
         <PropertyRef Name="Code" />
@@ -261,8 +366,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Manda__Ditri__49C3F6B7">
-    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
-    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="*" />
+    <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_Mandal" Type="NGODBModel.Store.tbl_Mandal" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_District">
         <PropertyRef Name="Code" />
@@ -273,8 +378,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_schoo__Distr__3E52440B">
-    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
-    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="NGODBModel.Store.tbl_schoolDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_District">
         <PropertyRef Name="Code" />
@@ -285,8 +390,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_schoo__Monda__3F466844">
-    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="0..1" />
-    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <End Role="tbl_Mandal" Type="NGODBModel.Store.tbl_Mandal" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="NGODBModel.Store.tbl_schoolDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Mandal">
         <PropertyRef Name="Code" />
@@ -297,8 +402,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_schoo__Stude__403A8C7D">
-    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="0..1" />
-    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <End Role="tbl_Student_details" Type="NGODBModel.Store.tbl_Student_details" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="NGODBModel.Store.tbl_schoolDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Student_details">
         <PropertyRef Name="StudentRegno" />
@@ -309,8 +414,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_schoo__Teach__412EB0B6">
-    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="0..1" />
-    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <End Role="tbl_teacher_details" Type="NGODBModel.Store.tbl_teacher_details" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="NGODBModel.Store.tbl_schoolDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_teacher_details">
         <PropertyRef Name="TeacherRegno" />
@@ -321,8 +426,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_schoo__ZoneI__4222D4EF">
-    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
-    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <End Role="tbl_Zone" Type="NGODBModel.Store.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="NGODBModel.Store.tbl_schoolDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Zone">
         <PropertyRef Name="Code" />
@@ -333,8 +438,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Stude__Gende__4316F928">
-    <End Role="tbl_Gender" Type="Self.tbl_Gender" Multiplicity="0..1" />
-    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="*" />
+    <End Role="tbl_Gender" Type="NGODBModel.Store.tbl_Gender" Multiplicity="0..1" />
+    <End Role="tbl_Student_details" Type="NGODBModel.Store.tbl_Student_details" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Gender">
         <PropertyRef Name="GenderId" />
@@ -345,8 +450,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Stude__Notif__440B1D61">
-    <End Role="tbl_Notifications" Type="Self.tbl_Notifications" Multiplicity="1" />
-    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="*" />
+    <End Role="tbl_Notifications" Type="NGODBModel.Store.tbl_Notifications" Multiplicity="1" />
+    <End Role="tbl_Student_details" Type="NGODBModel.Store.tbl_Student_details" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Notifications">
         <PropertyRef Name="code" />
@@ -357,8 +462,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_teach__Gende__44FF419A">
-    <End Role="tbl_Gender" Type="Self.tbl_Gender" Multiplicity="0..1" />
-    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="*" />
+    <End Role="tbl_Gender" Type="NGODBModel.Store.tbl_Gender" Multiplicity="0..1" />
+    <End Role="tbl_teacher_details" Type="NGODBModel.Store.tbl_teacher_details" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Gender">
         <PropertyRef Name="GenderId" />
@@ -369,8 +474,8 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__tbl_Users__RoleI__0519C6AF">
-    <End Role="tbl_Roles" Type="Self.tbl_Roles" Multiplicity="1" />
-    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="*" />
+    <End Role="tbl_Roles" Type="NGODBModel.Store.tbl_Roles" Multiplicity="1" />
+    <End Role="tbl_Users" Type="NGODBModel.Store.tbl_Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbl_Roles">
         <PropertyRef Name="RoleId" />
@@ -380,112 +485,22 @@ warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a prima
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="proc_TeacherReg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_firstName" Type="varchar" Mode="In" />
+    <Parameter Name="p_middleName" Type="varchar" Mode="In" />
+    <Parameter Name="p_lastName" Type="varchar" Mode="In" />
+    <Parameter Name="p_email" Type="varchar" Mode="In" />
+    <Parameter Name="p_selectedGenderId" Type="varchar" Mode="In" />
+    <Parameter Name="p_contactno" Type="varchar" Mode="In" />
+    <Parameter Name="p_schoolName" Type="varchar" Mode="In" />
+    <Parameter Name="p_schoolAdd" Type="varchar" Mode="In" />
+    <Parameter Name="p_schoolDistrictId" Type="varchar" Mode="In" />
+    <Parameter Name="p_ScholZoneId" Type="varchar" Mode="In" />
+    <Parameter Name="p_schoolMandalid" Type="varchar" Mode="In" />
+    <Parameter Name="p_schoolVillage" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="proc_Notifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="vaddepally">
     <Parameter Name="xml" Type="xml" Mode="In" />
     <Parameter Name="type" Type="int" Mode="In" />
   </Function>
-  <EntityContainer Name="NGODBModelStoreContainer">
-    <EntitySet Name="tbl_Cast" EntityType="Self.tbl_Cast" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_District" EntityType="Self.tbl_District" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Gender" EntityType="Self.tbl_Gender" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Mandal" EntityType="Self.tbl_Mandal" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Notifications" EntityType="Self.tbl_Notifications" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Religion" EntityType="Self.tbl_Religion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Roles" EntityType="Self.tbl_Roles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Student_details" EntityType="Self.tbl_Student_details" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_teacher_details" EntityType="Self.tbl_teacher_details" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Village" EntityType="Self.tbl_Village" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Zone" EntityType="Self.tbl_Zone" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tbl_Address" EntityType="Self.tbl_Address" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[tbl_Address].[Id] AS [Id], 
-[tbl_Address].[StudentRegno] AS [StudentRegno], 
-[tbl_Address].[TeacherRegno] AS [TeacherRegno], 
-[tbl_Address].[Address] AS [Address], 
-[tbl_Address].[ZoneId] AS [ZoneId], 
-[tbl_Address].[MondalId] AS [MondalId], 
-[tbl_Address].[DistrictId] AS [DistrictId], 
-[tbl_Address].[Village] AS [Village]
-FROM [dbo].[tbl_Address] AS [tbl_Address]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="tbl_schoolDetails" EntityType="Self.tbl_schoolDetails" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[tbl_schoolDetails].[Id] AS [Id], 
-[tbl_schoolDetails].[StudentRegno] AS [StudentRegno], 
-[tbl_schoolDetails].[TeacherRegno] AS [TeacherRegno], 
-[tbl_schoolDetails].[schoolName] AS [schoolName], 
-[tbl_schoolDetails].[schoolAddress] AS [schoolAddress], 
-[tbl_schoolDetails].[PhNumber] AS [PhNumber], 
-[tbl_schoolDetails].[ZoneId] AS [ZoneId], 
-[tbl_schoolDetails].[MondalId] AS [MondalId], 
-[tbl_schoolDetails].[DistrictId] AS [DistrictId], 
-[tbl_schoolDetails].[Village] AS [Village]
-FROM [dbo].[tbl_schoolDetails] AS [tbl_schoolDetails]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK__tbl_Addre__Distr__37A5467C" Association="Self.FK__tbl_Addre__Distr__37A5467C">
-      <End Role="tbl_District" EntitySet="tbl_District" />
-      <End Role="tbl_Address" EntitySet="tbl_Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Addre__Monda__38996AB5" Association="Self.FK__tbl_Addre__Monda__38996AB5">
-      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
-      <End Role="tbl_Address" EntitySet="tbl_Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Addre__Stude__398D8EEE" Association="Self.FK__tbl_Addre__Stude__398D8EEE">
-      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
-      <End Role="tbl_Address" EntitySet="tbl_Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Addre__Teach__3A81B327" Association="Self.FK__tbl_Addre__Teach__3A81B327">
-      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
-      <End Role="tbl_Address" EntitySet="tbl_Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Addre__ZoneI__3B75D760" Association="Self.FK__tbl_Addre__ZoneI__3B75D760">
-      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
-      <End Role="tbl_Address" EntitySet="tbl_Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Distr__zonec__48CFD27E" Association="Self.FK__tbl_Distr__zonec__48CFD27E">
-      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
-      <End Role="tbl_District" EntitySet="tbl_District" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Manda__Ditri__49C3F6B7" Association="Self.FK__tbl_Manda__Ditri__49C3F6B7">
-      <End Role="tbl_District" EntitySet="tbl_District" />
-      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_schoo__Distr__3E52440B" Association="Self.FK__tbl_schoo__Distr__3E52440B">
-      <End Role="tbl_District" EntitySet="tbl_District" />
-      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_schoo__Monda__3F466844" Association="Self.FK__tbl_schoo__Monda__3F466844">
-      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
-      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_schoo__Stude__403A8C7D" Association="Self.FK__tbl_schoo__Stude__403A8C7D">
-      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
-      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_schoo__Teach__412EB0B6" Association="Self.FK__tbl_schoo__Teach__412EB0B6">
-      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
-      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_schoo__ZoneI__4222D4EF" Association="Self.FK__tbl_schoo__ZoneI__4222D4EF">
-      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
-      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Stude__Gende__4316F928" Association="Self.FK__tbl_Stude__Gende__4316F928">
-      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
-      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Stude__Notif__440B1D61" Association="Self.FK__tbl_Stude__Notif__440B1D61">
-      <End Role="tbl_Notifications" EntitySet="tbl_Notifications" />
-      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_teach__Gende__44FF419A" Association="Self.FK__tbl_teach__Gende__44FF419A">
-      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
-      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_Users__RoleI__0519C6AF" Association="Self.FK__tbl_Users__RoleI__0519C6AF">
-      <End Role="tbl_Roles" EntitySet="tbl_Roles" />
-      <End Role="tbl_Users" EntitySet="tbl_Users" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

@@ -10,10 +10,9 @@ namespace NGO.Models
         public int? NotificationId { set; get; }
         public string Code { set; get; }
         public string NotificationText { set; get; }
-        public DateTime? StartDate { set; get; }
-        public DateTime? EndDate { set; get; }
         public decimal? FeeAmount { set; get; }
-        public int? Del_ind { set; get; }
+        public bool? Del_ind { set; get; }
+        public bool? IsActive { set; get; }
         public int? CreatedBy { set; get; }
         public DateTime? CreatedDate { set; get; }
         public int? ModifiedBy { set; get; }

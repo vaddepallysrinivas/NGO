@@ -55,5 +55,58 @@ namespace DBLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Notifications_Result>("proc_Notifications", xmlParameter, typeParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> proc_TeacherReg(string p_firstName, string p_middleName, string p_lastName, string p_email, string p_selectedGenderId, string p_contactno, string p_schoolName, string p_schoolAdd, string p_schoolDistrictId, string p_ScholZoneId, string p_schoolMandalid, string p_schoolVillage)
+        {
+            var p_firstNameParameter = p_firstName != null ?
+                new ObjectParameter("p_firstName", p_firstName) :
+                new ObjectParameter("p_firstName", typeof(string));
+    
+            var p_middleNameParameter = p_middleName != null ?
+                new ObjectParameter("p_middleName", p_middleName) :
+                new ObjectParameter("p_middleName", typeof(string));
+    
+            var p_lastNameParameter = p_lastName != null ?
+                new ObjectParameter("p_lastName", p_lastName) :
+                new ObjectParameter("p_lastName", typeof(string));
+    
+            var p_emailParameter = p_email != null ?
+                new ObjectParameter("p_email", p_email) :
+                new ObjectParameter("p_email", typeof(string));
+    
+            var p_selectedGenderIdParameter = p_selectedGenderId != null ?
+                new ObjectParameter("p_selectedGenderId", p_selectedGenderId) :
+                new ObjectParameter("p_selectedGenderId", typeof(string));
+    
+            var p_contactnoParameter = p_contactno != null ?
+                new ObjectParameter("p_contactno", p_contactno) :
+                new ObjectParameter("p_contactno", typeof(string));
+    
+            var p_schoolNameParameter = p_schoolName != null ?
+                new ObjectParameter("p_schoolName", p_schoolName) :
+                new ObjectParameter("p_schoolName", typeof(string));
+    
+            var p_schoolAddParameter = p_schoolAdd != null ?
+                new ObjectParameter("p_schoolAdd", p_schoolAdd) :
+                new ObjectParameter("p_schoolAdd", typeof(string));
+    
+            var p_schoolDistrictIdParameter = p_schoolDistrictId != null ?
+                new ObjectParameter("p_schoolDistrictId", p_schoolDistrictId) :
+                new ObjectParameter("p_schoolDistrictId", typeof(string));
+    
+            var p_ScholZoneIdParameter = p_ScholZoneId != null ?
+                new ObjectParameter("p_ScholZoneId", p_ScholZoneId) :
+                new ObjectParameter("p_ScholZoneId", typeof(string));
+    
+            var p_schoolMandalidParameter = p_schoolMandalid != null ?
+                new ObjectParameter("p_schoolMandalid", p_schoolMandalid) :
+                new ObjectParameter("p_schoolMandalid", typeof(string));
+    
+            var p_schoolVillageParameter = p_schoolVillage != null ?
+                new ObjectParameter("p_schoolVillage", p_schoolVillage) :
+                new ObjectParameter("p_schoolVillage", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("proc_TeacherReg", p_firstNameParameter, p_middleNameParameter, p_lastNameParameter, p_emailParameter, p_selectedGenderIdParameter, p_contactnoParameter, p_schoolNameParameter, p_schoolAddParameter, p_schoolDistrictIdParameter, p_ScholZoneIdParameter, p_schoolMandalidParameter, p_schoolVillageParameter);
+        }
     }
 }

@@ -83,6 +83,20 @@
       <End Role="tbl_Zone" EntitySet="tbl_Zone" />
       <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
     </AssociationSet>
+    <FunctionImport Name="proc_TeacherReg" ReturnType="Collection(Int32)">
+      <Parameter Name="p_firstName" Mode="In" Type="String" />
+      <Parameter Name="p_middleName" Mode="In" Type="String" />
+      <Parameter Name="p_lastName" Mode="In" Type="String" />
+      <Parameter Name="p_email" Mode="In" Type="String" />
+      <Parameter Name="p_selectedGenderId" Mode="In" Type="String" />
+      <Parameter Name="p_contactno" Mode="In" Type="String" />
+      <Parameter Name="p_schoolName" Mode="In" Type="String" />
+      <Parameter Name="p_schoolAdd" Mode="In" Type="String" />
+      <Parameter Name="p_schoolDistrictId" Mode="In" Type="String" />
+      <Parameter Name="p_ScholZoneId" Mode="In" Type="String" />
+      <Parameter Name="p_schoolMandalid" Mode="In" Type="String" />
+      <Parameter Name="p_schoolVillage" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="proc_Notifications_Result">
     <Property Type="Int32" Name="NotificationId" Nullable="false" />
@@ -158,15 +172,14 @@
     <Property Name="NotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="code" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="NotificationText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="StartDate" Type="DateTime" Precision="3" />
-    <Property Name="EndDate" Type="DateTime" Precision="3" />
-    <Property Name="Del_ind" Type="Int32" />
+    <Property Name="Del_ind" Type="Boolean" />
     <Property Name="CreatedBy" Type="Int32" />
     <Property Name="CreatedDate" Type="DateTime" Precision="3" />
     <Property Name="ModifiedBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <Property Name="FeeAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="tbl_Student_details" Relationship="NGODBModel.FK__tbl_Stude__Notif__440B1D61" FromRole="tbl_Notifications" ToRole="tbl_Student_details" />
+    <Property Type="Boolean" Name="IsActive" />
   </EntityType>
   <EntityType Name="tbl_Religion">
     <Key>
