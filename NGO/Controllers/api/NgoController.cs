@@ -37,21 +37,21 @@ namespace NGO.Controllers.api
         }
 
         [Route("getDistricts")]
-        public IEnumerable<Districts> GetDistricts()
+        public IEnumerable<District> GetDistricts()
         {
             return obj.GetDistricts();
         }
 
         [HttpPost]
         [Route("loadZones")]
-        public IEnumerable<Zones> LoadZones([FromBody]IteamID DistrictID)
+        public IEnumerable<Zone> LoadZones([FromBody]IteamID DistrictID)
         {
             return obj.GetZones(DistrictID);
         }
-
+        ssss
         [HttpPost]
         [Route("loadMandals")]
-        public IEnumerable<Mandals> LoadMandals([FromBody]IteamID ZoneID)
+        public IEnumerable<Mandal> LoadMandals([FromBody]IteamID ZoneID)
         {
             return obj.GetMandals(ZoneID);
         }

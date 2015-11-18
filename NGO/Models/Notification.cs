@@ -25,17 +25,17 @@ namespace NGO.Models
         public string ID { get; set; }
     }
 
-    public class Districts
+    public class District
     {
         public string Code { get; set; }
         public string DistrictName { get; set; }
     }
-    public class Zones
+    public class Zone
     {
         public string Code { get; set; }
         public string ZoneName { get; set; }
     }
-    public class Mandals
+    public class Mandal
     {
         public string Code { get; set; }
         public string MandalName { get; set; }

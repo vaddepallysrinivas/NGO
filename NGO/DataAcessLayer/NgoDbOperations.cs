@@ -23,9 +23,6 @@ namespace NGO.DataAcessLayer
         public IEnumerable<Notification> GetNotificationsList()
         {
 
-
-
-
             var result = lobj1.Database.SqlQuery<Notification>("exec proc_Notifications @xml=null,@type=3").ToList();
 
             return result;
