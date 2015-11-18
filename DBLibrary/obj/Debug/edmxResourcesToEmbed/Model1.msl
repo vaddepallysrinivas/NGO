@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NGODBModelStoreContainer" CdmEntityContainer="NGODBEntities">
+    <FunctionImportMapping FunctionImportName="proc_Notifications" FunctionName="NGODBModel.Store.proc_Notifications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NGODBModel.proc_Notifications_Result">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="NotificationText" ColumnName="NotificationText" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_Cast">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Cast">
+        <MappingFragment StoreEntitySet="tbl_Cast">
+          <ScalarProperty Name="Castid" ColumnName="Castid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CastName" ColumnName="CastName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_District">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_District">
+        <MappingFragment StoreEntitySet="tbl_District">
+          <ScalarProperty Name="zonecode" ColumnName="zonecode" />
+          <ScalarProperty Name="Districtid" ColumnName="Districtid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Gender">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Gender">
+        <MappingFragment StoreEntitySet="tbl_Gender">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Mandal">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Mandal">
+        <MappingFragment StoreEntitySet="tbl_Mandal">
+          <ScalarProperty Name="DitrictCode" ColumnName="DitrictCode" />
+          <ScalarProperty Name="Mandalid" ColumnName="Mandalid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MandalName" ColumnName="MandalName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Notifications">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Notifications">
+        <MappingFragment StoreEntitySet="tbl_Notifications">
+          <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="NotificationText" ColumnName="NotificationText" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Religion">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Religion">
+        <MappingFragment StoreEntitySet="tbl_Religion">
+          <ScalarProperty Name="Religionid" ColumnName="Religionid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ReligionName" ColumnName="ReligionName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Roles">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Roles">
+        <MappingFragment StoreEntitySet="tbl_Roles">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Student_details">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Student_details">
+        <MappingFragment StoreEntitySet="tbl_Student_details">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="TeacherRefCode" ColumnName="TeacherRefCode" />
+          <ScalarProperty Name="NotificationCode" ColumnName="NotificationCode" />
+          <ScalarProperty Name="StudentRegno" ColumnName="StudentRegno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_teacher_details">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_teacher_details">
+        <MappingFragment StoreEntitySet="tbl_teacher_details">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+          <ScalarProperty Name="TeacherRegno" ColumnName="TeacherRegno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Del_Ind" ColumnName="Del_Ind" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Village">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Village">
+        <MappingFragment StoreEntitySet="tbl_Village">
+          <ScalarProperty Name="Villageid" ColumnName="Villageid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Zone">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Zone">
+        <MappingFragment StoreEntitySet="tbl_Zone">
+          <ScalarProperty Name="Zoneid" ColumnName="Zoneid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Address">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_Address">
+        <MappingFragment StoreEntitySet="tbl_Address">
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="MondalId" ColumnName="MondalId" />
+          <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TeacherRegno" ColumnName="TeacherRegno" />
+          <ScalarProperty Name="StudentRegno" ColumnName="StudentRegno" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_schoolDetails">
+      <EntityTypeMapping TypeName="NGODBModel.tbl_schoolDetails">
+        <MappingFragment StoreEntitySet="tbl_schoolDetails">
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="MondalId" ColumnName="MondalId" />
+          <ScalarProperty Name="ZoneId" ColumnName="ZoneId" />
+          <ScalarProperty Name="PhNumber" ColumnName="PhNumber" />
+          <ScalarProperty Name="schoolAddress" ColumnName="schoolAddress" />
+          <ScalarProperty Name="schoolName" ColumnName="schoolName" />
+          <ScalarProperty Name="TeacherRegno" ColumnName="TeacherRegno" />
+          <ScalarProperty Name="StudentRegno" ColumnName="StudentRegno" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

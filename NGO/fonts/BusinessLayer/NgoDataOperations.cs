@@ -21,17 +21,17 @@ namespace NGO.BusinessLayer
             return obj.GetNotificationsList();
         }
 
-        internal IEnumerable<Districts> GetDistricts()
+        internal IEnumerable<District> GetDistricts()
         {
             return obj.GetDistricts();
         }
 
-        internal IEnumerable<Zones> GetZones(Models.IteamID DistrictID)
+        internal IEnumerable<Zone> GetZones(Models.IteamID DistrictID)
         {
             return obj.GetZone(DistrictID);
         }
 
-        internal IEnumerable<Mandals> GetMandals(IteamID ZoneID)
+        internal IEnumerable<Mandal> GetMandals(IteamID ZoneID)
         {
             return obj.GetMandal(ZoneID);
         }

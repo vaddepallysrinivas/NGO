@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NGODBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NGODB.dbo.tbl_Address' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentRegno" Type="varchar" MaxLength="50" />
+    <Property Name="TeacherRegno" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" />
+    <Property Name="ZoneId" Type="varchar" MaxLength="50" />
+    <Property Name="MondalId" Type="varchar" MaxLength="50" />
+    <Property Name="DistrictId" Type="varchar" MaxLength="50" />
+    <Property Name="Village" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tbl_Cast">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CastName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Castid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_District">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Districtid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zonecode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="int" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Mandal">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MandalName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Mandalid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DitrictCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Notifications">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="NotificationText" Type="varchar(max)" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Del_ind" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="FeeAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Religion">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReligionName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Religionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NGODB.dbo.tbl_schoolDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_schoolDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentRegno" Type="varchar" MaxLength="50" />
+    <Property Name="TeacherRegno" Type="varchar" MaxLength="50" />
+    <Property Name="schoolName" Type="varchar" MaxLength="1000" />
+    <Property Name="schoolAddress" Type="varchar" MaxLength="1000" />
+    <Property Name="PhNumber" Type="varchar" MaxLength="20" />
+    <Property Name="ZoneId" Type="varchar" MaxLength="50" />
+    <Property Name="MondalId" Type="varchar" MaxLength="50" />
+    <Property Name="DistrictId" Type="varchar" MaxLength="50" />
+    <Property Name="Village" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tbl_Student_details">
+    <Key>
+      <PropertyRef Name="StudentRegno" />
+    </Key>
+    <Property Name="StudentRegno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NotificationCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TeacherRefCode" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Del_ind" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_teacher_details">
+    <Key>
+      <PropertyRef Name="TeacherRegno" />
+    </Key>
+    <Property Name="TeacherRegno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Del_ind" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Del_Ind" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Village">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VillageName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Villageid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Zone">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZoneName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Zoneid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tbl_Addre__Distr__37A5467C">
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_District">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_Address">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Addre__Monda__38996AB5">
+    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Mandal">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_Address">
+        <PropertyRef Name="MondalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Addre__Stude__398D8EEE">
+    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Student_details">
+        <PropertyRef Name="StudentRegno" />
+      </Principal>
+      <Dependent Role="tbl_Address">
+        <PropertyRef Name="StudentRegno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Addre__Teach__3A81B327">
+    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_teacher_details">
+        <PropertyRef Name="TeacherRegno" />
+      </Principal>
+      <Dependent Role="tbl_Address">
+        <PropertyRef Name="TeacherRegno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Addre__ZoneI__3B75D760">
+    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Zone">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_Address">
+        <PropertyRef Name="ZoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Distr__zonec__48CFD27E">
+    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Zone">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_District">
+        <PropertyRef Name="zonecode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Manda__Ditri__49C3F6B7">
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_District">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_Mandal">
+        <PropertyRef Name="DitrictCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_schoo__Distr__3E52440B">
+    <End Role="tbl_District" Type="Self.tbl_District" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_District">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_schoolDetails">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_schoo__Monda__3F466844">
+    <End Role="tbl_Mandal" Type="Self.tbl_Mandal" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Mandal">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_schoolDetails">
+        <PropertyRef Name="MondalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_schoo__Stude__403A8C7D">
+    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Student_details">
+        <PropertyRef Name="StudentRegno" />
+      </Principal>
+      <Dependent Role="tbl_schoolDetails">
+        <PropertyRef Name="StudentRegno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_schoo__Teach__412EB0B6">
+    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_teacher_details">
+        <PropertyRef Name="TeacherRegno" />
+      </Principal>
+      <Dependent Role="tbl_schoolDetails">
+        <PropertyRef Name="TeacherRegno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_schoo__ZoneI__4222D4EF">
+    <End Role="tbl_Zone" Type="Self.tbl_Zone" Multiplicity="0..1" />
+    <End Role="tbl_schoolDetails" Type="Self.tbl_schoolDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Zone">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="tbl_schoolDetails">
+        <PropertyRef Name="ZoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Stude__Gende__4316F928">
+    <End Role="tbl_Gender" Type="Self.tbl_Gender" Multiplicity="0..1" />
+    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="tbl_Student_details">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Stude__Notif__440B1D61">
+    <End Role="tbl_Notifications" Type="Self.tbl_Notifications" Multiplicity="1" />
+    <End Role="tbl_Student_details" Type="Self.tbl_Student_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Notifications">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="tbl_Student_details">
+        <PropertyRef Name="NotificationCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_teach__Gende__44FF419A">
+    <End Role="tbl_Gender" Type="Self.tbl_Gender" Multiplicity="0..1" />
+    <End Role="tbl_teacher_details" Type="Self.tbl_teacher_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="tbl_teacher_details">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Users__RoleI__0519C6AF">
+    <End Role="tbl_Roles" Type="Self.tbl_Roles" Multiplicity="1" />
+    <End Role="tbl_Users" Type="Self.tbl_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="tbl_Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="proc_Notifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="vaddepally">
+    <Parameter Name="xml" Type="xml" Mode="In" />
+    <Parameter Name="type" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="NGODBModelStoreContainer">
+    <EntitySet Name="tbl_Cast" EntityType="Self.tbl_Cast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_District" EntityType="Self.tbl_District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Gender" EntityType="Self.tbl_Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Mandal" EntityType="Self.tbl_Mandal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Notifications" EntityType="Self.tbl_Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Religion" EntityType="Self.tbl_Religion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Roles" EntityType="Self.tbl_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Student_details" EntityType="Self.tbl_Student_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_teacher_details" EntityType="Self.tbl_teacher_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Users" EntityType="Self.tbl_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Village" EntityType="Self.tbl_Village" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Zone" EntityType="Self.tbl_Zone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Address" EntityType="Self.tbl_Address" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tbl_Address].[Id] AS [Id], 
+[tbl_Address].[StudentRegno] AS [StudentRegno], 
+[tbl_Address].[TeacherRegno] AS [TeacherRegno], 
+[tbl_Address].[Address] AS [Address], 
+[tbl_Address].[ZoneId] AS [ZoneId], 
+[tbl_Address].[MondalId] AS [MondalId], 
+[tbl_Address].[DistrictId] AS [DistrictId], 
+[tbl_Address].[Village] AS [Village]
+FROM [dbo].[tbl_Address] AS [tbl_Address]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_schoolDetails" EntityType="Self.tbl_schoolDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tbl_schoolDetails].[Id] AS [Id], 
+[tbl_schoolDetails].[StudentRegno] AS [StudentRegno], 
+[tbl_schoolDetails].[TeacherRegno] AS [TeacherRegno], 
+[tbl_schoolDetails].[schoolName] AS [schoolName], 
+[tbl_schoolDetails].[schoolAddress] AS [schoolAddress], 
+[tbl_schoolDetails].[PhNumber] AS [PhNumber], 
+[tbl_schoolDetails].[ZoneId] AS [ZoneId], 
+[tbl_schoolDetails].[MondalId] AS [MondalId], 
+[tbl_schoolDetails].[DistrictId] AS [DistrictId], 
+[tbl_schoolDetails].[Village] AS [Village]
+FROM [dbo].[tbl_schoolDetails] AS [tbl_schoolDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tbl_Addre__Distr__37A5467C" Association="Self.FK__tbl_Addre__Distr__37A5467C">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Monda__38996AB5" Association="Self.FK__tbl_Addre__Monda__38996AB5">
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Stude__398D8EEE" Association="Self.FK__tbl_Addre__Stude__398D8EEE">
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__Teach__3A81B327" Association="Self.FK__tbl_Addre__Teach__3A81B327">
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Addre__ZoneI__3B75D760" Association="Self.FK__tbl_Addre__ZoneI__3B75D760">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_Address" EntitySet="tbl_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Distr__zonec__48CFD27E" Association="Self.FK__tbl_Distr__zonec__48CFD27E">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_District" EntitySet="tbl_District" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Manda__Ditri__49C3F6B7" Association="Self.FK__tbl_Manda__Ditri__49C3F6B7">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Distr__3E52440B" Association="Self.FK__tbl_schoo__Distr__3E52440B">
+      <End Role="tbl_District" EntitySet="tbl_District" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Monda__3F466844" Association="Self.FK__tbl_schoo__Monda__3F466844">
+      <End Role="tbl_Mandal" EntitySet="tbl_Mandal" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Stude__403A8C7D" Association="Self.FK__tbl_schoo__Stude__403A8C7D">
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__Teach__412EB0B6" Association="Self.FK__tbl_schoo__Teach__412EB0B6">
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_schoo__ZoneI__4222D4EF" Association="Self.FK__tbl_schoo__ZoneI__4222D4EF">
+      <End Role="tbl_Zone" EntitySet="tbl_Zone" />
+      <End Role="tbl_schoolDetails" EntitySet="tbl_schoolDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Stude__Gende__4316F928" Association="Self.FK__tbl_Stude__Gende__4316F928">
+      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Stude__Notif__440B1D61" Association="Self.FK__tbl_Stude__Notif__440B1D61">
+      <End Role="tbl_Notifications" EntitySet="tbl_Notifications" />
+      <End Role="tbl_Student_details" EntitySet="tbl_Student_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_teach__Gende__44FF419A" Association="Self.FK__tbl_teach__Gende__44FF419A">
+      <End Role="tbl_Gender" EntitySet="tbl_Gender" />
+      <End Role="tbl_teacher_details" EntitySet="tbl_teacher_details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Users__RoleI__0519C6AF" Association="Self.FK__tbl_Users__RoleI__0519C6AF">
+      <End Role="tbl_Roles" EntitySet="tbl_Roles" />
+      <End Role="tbl_Users" EntitySet="tbl_Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -48,7 +48,7 @@ namespace NGO.Controllers.api
         {
             return obj.GetZones(DistrictID);
         }
-        ssss
+       
         [HttpPost]
         [Route("loadMandals")]
         public IEnumerable<Mandal> LoadMandals([FromBody]IteamID ZoneID)
