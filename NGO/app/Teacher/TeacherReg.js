@@ -7,6 +7,7 @@ TeacherReg.$inject = ['$state', '$scope', 'TeacherRegSercice'];
 function TeacherReg($state, $scope, TeacherRegSercice) {
 
     $scope.init = function () {
+        $scope.hideErrors = false;
         TeacherRegSercice.getDistricts().then(function (res) {
             $scope.schoolDistrictList = res.data;
         });
@@ -54,14 +55,47 @@ function TeacherReg($state, $scope, TeacherRegSercice) {
     // function to submit the form after all validation has occurred			
     $scope.submitForm = function () {
 
-        // Set the 'submitted' flag to true
-        $scope.submitted = true;
+
+        // Set the 'hideErrors' flag to true
+        $scope.hideErrors = true;
 
         if ($scope.RegForm.$valid) {
-            alert("Form is valid!");
-        }
-        else {
-            alert("Please correct errors!");
+
+            var params = {
+                firstName: $scope.user.firstName,
+                middleName: $scope.user.middleName,
+                lastName: $scope.user.lastName,
+                email: $scope.user.email,
+                selectedGenderId: $scope.user.selectedGenderId,
+                contactno: $scope.user.contactno,
+                schoolName: $scope.user.schoolName,
+                schoolAdd: $scope.user.schoolAdd,
+                schoolDistrictId: $scope.user.schoolDistrictId,
+                ScholZoneId: $scope.user.ScholZoneId,
+                schoolMandalid: $scope.user.schoolMandalid,
+                schoolVillage: $scope.user.schoolVillage
+            };
+
+
+            TeacherRegSercice.saveTeacherDetails(params).then(function (res) {
+
+                $scope.hideErrors = false;
+
+                $scope.user.firstName = '';
+                $scope.user.middleName = '';
+                $scope.user.lastName = '';
+                $scope.user.email = '';
+                $scope.user.selectedGenderId = '';
+                $scope.user.contactno = '';
+                $scope.user.schoolName = '';
+                $scope.user.schoolAdd = '';
+                $scope.user.schoolDistrictId = '';
+                $scope.user.ScholZoneId = '';
+                $scope.user.schoolMandalid = '';
+                $scope.user.schoolVillage = '';
+
+                $scope.message = res.data;
+            });
         }
     };
 }

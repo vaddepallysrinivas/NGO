@@ -39,4 +39,28 @@ namespace NGO.Models
         public string Code { get; set; }
         public string MandalName { get; set; }
     }
+    public class TeacherDetails
+    {
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string SelectedGenderId { get; set; }
+        public string Contactno { get; set; }
+        public string SchoolName { get; set; }
+        public string SchoolAdd { get; set; }
+        public string SchoolDistrictId { get; set; }
+        public string ScholZoneId { get; set; }
+        public string SchoolMandalid { get; set; }
+        public string SchoolVillage { get; set; }
+    }
+
+
+    public class TeacherRegDetails
+    {
+        public string TEACHER_REG { get; set; }
+        public string Password { get; set; }
+        public string COUPON { get; set; }
+
+    }
 }

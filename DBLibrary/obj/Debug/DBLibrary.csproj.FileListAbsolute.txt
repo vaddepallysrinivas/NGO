@@ -27,3 +27,11 @@ D:\GIT\NewNGO\DBLibrary\bin\Debug\EntityFramework.xml
 D:\GIT\NewNGO\DBLibrary\obj\Debug\DBLibrary.csprojResolveAssemblyReference.cache
 D:\GIT\NewNGO\DBLibrary\obj\Debug\DBLibrary.dll
 D:\GIT\NewNGO\DBLibrary\obj\Debug\DBLibrary.pdb
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\bin\Debug\DBLibrary.dll.config
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\bin\Debug\DBLibrary.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\bin\Debug\DBLibrary.pdb
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\bin\Debug\EntityFramework.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\bin\Debug\EntityFramework.xml
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\obj\Debug\DBLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\obj\Debug\DBLibrary.dll
+C:\Users\Kranthi-PC\Source\Repos\NGO2\DBLibrary\obj\Debug\DBLibrary.pdb

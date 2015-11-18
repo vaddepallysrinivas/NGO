@@ -35,12 +35,6 @@ namespace NGO.Controllers.api
 
             return obj.GetNotificationsList();
         }
-        [Route("getNotificationCode")]
-        public Notification GetNotificationCode()
-        {
-
-            return obj.GetNotificationCode();
-        }
 
         [Route("getDistricts")]
         public IEnumerable<District> GetDistricts()
@@ -57,11 +51,26 @@ namespace NGO.Controllers.api
 
         [HttpPost]
         [Route("loadMandals")]
-        public IEnumerable<Mandal> LoadMandals([FromBody]IteamID ZoneID)
+        public IEnumerable<Mandal> LoadMandals([FromBody]IteamID DistrictID)
         {
-            return obj.GetMandals(ZoneID);
+            return obj.GetMandals(DistrictID);
         }
 
+
+        [HttpPost]
+        [Route("saveTeacherDetails")]
+        public IHttpActionResult SaveTeacherDetails([FromBody]TeacherDetails Teacher)
+        {
+            TeacherRegDetails objDetails = new TeacherRegDetails();
+            if (obj.SaveTeacherDetails(Teacher, out objDetails))
+            {
+                return Ok("Registerd successfuly. Your Details will be sent to your mobile as sms");
+            }
+            else
+            {
+                return Ok("Oops!..Something went wrong.");
+            }
+        }
 
         #endregion
 

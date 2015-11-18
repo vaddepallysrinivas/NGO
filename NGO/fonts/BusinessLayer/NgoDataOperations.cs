@@ -41,5 +41,10 @@ namespace NGO.BusinessLayer
         {
             return obj.GetMandal(ZoneID);
         }
+
+        internal bool SaveTeacherDetails(TeacherDetails Teacher, out TeacherRegDetails objDetails)
+        {
+            return obj.SaveTeacherDetails(Teacher, out  objDetails);
+        }
     }
 }
