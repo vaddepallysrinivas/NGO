@@ -8,7 +8,8 @@ function notificationService($http) {
 
     var service = {
         getNotificationsList: getNotificationsList,
-        getNotificationCode: getNotificationCode
+        getNotificationCode: getNotificationCode,
+        crudNotification: crudNotification
     };
 
     return service;
@@ -21,21 +22,16 @@ function notificationService($http) {
         //  alert();
         return $http.get("ngodata/getNotificationCode");
     }
-
-
-    function search(companyName, searchBy) {
-
-        var params = {
-            companyName: companyName,
-            searchBy: searchBy
-        };
-
+    function crudNotification(objNotification) {
+       
+        
         var req = {
             method: 'POST',
-            url: 'bcd/ae/company/',
-            data: params,
+            url: 'ngodata/crudNotification',
+            data: objNotification,
         }
         return $http(req);
+        
     }
 
  

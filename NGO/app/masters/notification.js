@@ -12,9 +12,11 @@ function notification($state, $scope, notificationService, uiGridConstants) {
         designGrid: designGrid,
         gridColumns: gridColumns,
         editRow: editRow,
+        deleteRow: deleteRow,
         create: create,
         save: save,
-        clear:clear
+        clear: clear,
+        crudNotification: crudNotification
 
     };
 
@@ -22,8 +24,53 @@ function notification($state, $scope, notificationService, uiGridConstants) {
 
     return vm;
 
-    function save() {
+    function save(ncForm) {
+        vm.submitted = true;
+        if (ncForm.$valid) {
+
+            var objNotification = {
+                code: vm.model.notificationCode,
+                notificationText: vm.model.notificationText,
+                feeAmount: vm.model.feeAmount,
+                type: vm.model.type
+            };
+            crudNotification(objNotification);
+            if (vm.model.type==1)
+                toastr.success('Record saved successfully.');
+            else if (vm.model.type == 2)
+                toastr.success('Record updated successfully.');
+        }
     }
+    function editRow(code, row) {
+        vm.model.type = 2;
+        vm.model.notificationCode = row.entity.code;
+        vm.model.notificationText = row.entity.notificationText;
+        vm.model.feeAmount = row.entity.feeAmount;
+        vm.model.isActive = row.entity.isActive;
+    }
+    function deleteRow(code, row) {
+        vm.model.type = 3;
+
+        var objNotification = {
+            code: vm.model.notificationCode,
+            notificationText: vm.model.notificationText,
+            feeAmount: vm.model.feeAmount,
+            type: vm.model.type
+        };
+        crudNotification(objNotification);
+        toastr.success('Record deleted successfully.');
+    }
+
+
+    function crudNotification(objNotification) {
+
+        notificationService.crudNotification(objNotification).then(function (res) {
+            
+        });
+
+    }
+
+
     function clear() {
 
         vm.model.notificationCode = "";
@@ -43,6 +90,8 @@ function notification($state, $scope, notificationService, uiGridConstants) {
 
 
     function init() {
+        vm.model.type = 1;
+        clear();
         designGrid();
         getNotificationsList();
     }
@@ -56,7 +105,7 @@ function notification($state, $scope, notificationService, uiGridConstants) {
             enableHorizontalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
             enableVerticalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
             //enableRowSelection: true,
-          //  enableFiltering: true,
+            //  enableFiltering: true,
             //enableSelectAll: true,
             selectionRowHeaderWidth: 35,
             rowHeight: 35,
@@ -81,7 +130,16 @@ function notification($state, $scope, notificationService, uiGridConstants) {
                 enableColumnMenu: false,
                 pinnedLeft: true,
                 cellTemplate:
-            '<button class="btn btn-primary btn-xs" ng-click="grid.appScope.vm.editRow(row.entity.code,row);" href="#">&nbsp;Edit</button>'
+            '<button class="btn btn-bcd" ng-click="grid.appScope.vm.editRow(row.entity.code,row);" href="#">&nbsp;Edit</button>'
+            },
+            {
+                name: 'delete',
+                displayName: 'Delte',
+                width: 50,
+                enableColumnMenu: false,
+                pinnedLeft: true,
+                cellTemplate:
+            '<button class="btn btn-bcd" ng-click="grid.appScope.vm.deleteRow(row.entity.code,row);" href="#">&nbsp;Delete</button>'
             },
              { name: 'code', displayName: "code" },
             { name: 'notificationText', displayName: "NotificationText" },
@@ -95,13 +153,6 @@ function notification($state, $scope, notificationService, uiGridConstants) {
 
     }
 
-    function editRow(companyContactId, row) {
-        vm.model.notificationCode = row.entity.code;
-        vm.model.notificationText = row.entity.notificationText;
-        vm.model.feeAmount = row.entity.feeAmount;
-        vm.model.isActive = row.entity.isActive;
-    }
-
 
 
     function getNotificationsList() {
@@ -109,7 +160,7 @@ function notification($state, $scope, notificationService, uiGridConstants) {
             vm.gridNotifications.data = res.data;
             vm.gridNotifications.columnDefs.forEach(function (colDef) {
                 var numChars = (new String(colDef.name)).length;
-                colDef.width = numChars * 12;
+                colDef.width = numChars * 15;
             });
         });
 

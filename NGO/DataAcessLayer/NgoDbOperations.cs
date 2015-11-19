@@ -20,23 +20,68 @@ namespace NGO.DataAcessLayer
         private XmlDocument xml;
         private string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString();
 
-        public IEnumerable<Notification> GetNotificationsList()
+
+        public void CrudNotification(Notification objNotification)
         {
 
-            List<Notification> result = lobj1.tbl_Notifications.Select(x => new Notification()
+            if (objNotification.Type == 1)
             {
-                Code = x.code,
-                NotificationText = x.NotificationText,
-                FeeAmount = x.FeeAmount,
-                IsActive = x.IsActive,
-                CreatedBy = x.CreatedBy,
-                ModifiedBy = x.ModifiedBy,
-                CreatedDate = x.CreatedDate,
-                ModifiedDate = x.ModifiedDate,
-                Del_ind = x.Del_ind
 
-            }).ToList();
+                using (lobj1)
+                {
+                    var tbl_Notifications = new tbl_Notifications()
+                    {
+                        code = objNotification.Code,
+                        NotificationText = objNotification.NotificationText,
+                        FeeAmount = 0,
+                        CreatedDate=System.DateTime.Now
+                      
 
+                    };
+                }
+
+            }
+
+            List<Notification> result;
+            using (lobj1)
+            {
+                result = lobj1.tbl_Notifications.Select(x => new Notification()
+                {
+                    Code = x.code,
+                    NotificationText = x.NotificationText,
+                    FeeAmount = x.FeeAmount,
+                    IsActive = x.IsActive,
+                    CreatedBy = x.CreatedBy,
+                    ModifiedBy = x.ModifiedBy,
+                    CreatedDate = x.CreatedDate,
+                    ModifiedDate = x.ModifiedDate,
+                    Del_ind = x.Del_ind
+
+                }).ToList();
+            }
+
+
+        }
+
+        public IEnumerable<Notification> GetNotificationsList()
+        {
+            List<Notification> result;
+            using (lobj1)
+            {
+                result = lobj1.tbl_Notifications.Select(x => new Notification()
+                {
+                    Code = x.code,
+                    NotificationText = x.NotificationText,
+                    FeeAmount = x.FeeAmount,
+                    IsActive = x.IsActive,
+                    CreatedBy = x.CreatedBy,
+                    ModifiedBy = x.ModifiedBy,
+                    CreatedDate = x.CreatedDate,
+                    ModifiedDate = x.ModifiedDate,
+                    Del_ind = x.Del_ind
+
+                }).ToList();
+            }
             return result;
 
         }

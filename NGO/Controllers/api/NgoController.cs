@@ -21,11 +21,11 @@ namespace NGO.Controllers.api
 
 
         #region notifications
-        [Route("insertNotification")]
+        [Route("crudNotification")]
         [HttpPost]
-        public int InsertNotification([FromBody] Notification obj)
+        public int crudNotification([FromBody] Notification objNotification)
         {
-
+            obj.CrudNotification(objNotification);
             return 1;
         }
 

@@ -17,6 +17,7 @@ namespace NGO.Models
         public DateTime? CreatedDate { set; get; }
         public int? ModifiedBy { set; get; }
         public DateTime? ModifiedDate { set; get; }
+        public int? Type{set;get;}
     }
 
     public class IteamID

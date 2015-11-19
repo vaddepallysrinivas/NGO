@@ -21,7 +21,10 @@ namespace NGO.BusinessLayer
             return obj.GetNotificationsList();
         }
 
-
+        public void CrudNotification(Notification objNotification)
+        {
+            obj.CrudNotification(objNotification);
+        }
 
         internal Notification GetNotificationCode()
         {
