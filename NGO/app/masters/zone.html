@@ -19,24 +19,24 @@
                         </div>
                         <!-- Code -->
                         <div class="col-sm-2">
-                            <label for="notificationCode" class="control-label">zone Code</label>
+                            <label for="zoneCode" class="control-label">Zone Code</label>
 
-                            <input type="text" class="form-control" readonly name="notificationCode" ng-model="vm.model.zone" />
+                            <input type="text" class="form-control" readonly name="zoneCode" ng-model="vm.model.zonecode" />
 
                         </div>
                         <!-- notificatio Text -->
                         <div class="col-sm-6" ng-class="{ 'has-error' : vm.submitted}">
-                            <label for="notificationText" class="control-label">Zone Name</label>*
+                            <label for="zoneName" class="control-label">Zone Name</label>*
                             <input type="text"
                                 class="form-control"
                                 name="notificationText"
-                                ng-model="vm.model.notificationText"
+                                ng-model="vm.model.zoneName"
                                 ng-required="true" />
 
                         </div>
                        
                         <div class="col-sm-2">
-                            <label for="notificationcode" class="control-label">Is Active</label>
+                            <label for="isActive" class="control-label">Is Active</label>
                             <input type="checkbox" class="form-control" name="isactive" ng-model="vm.model.isActive">
                         </div>
 
@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-10">
                             <button class="btn btn-primary" ng-click="vm.create()">New</button>
-                            <button type="submit" class="btn btn-primary" ng-disabled="vm.model.notificationCode.length<=0" ng-click="vm.save()">Save</button>
+                            <button type="submit" class="btn btn-primary" ng-disabled="vm.model.zonecode.length<=0" ng-click="vm.save()">Save</button>
                             <button class="btn btn-primary" ng-click="vm.clear()">Clear</button>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 ﻿'use strict'
 
-angular.module('ngo').factory('zoneService', notificationService);
+angular.module('ngo').factory('zoneService', zoneService);
 
 zoneService.$inject = ['$http'];
 
@@ -8,8 +8,8 @@ function zoneService($http) {
 
     var service = {
         getZoneList: getZoneList,
-        getNotificationCode: getNotificationCode,
-        crudNotification: crudNotification
+        getZoneCode: getZoneCode,
+        crudZone: crudZone
     };
 
     return service;
@@ -22,7 +22,7 @@ function zoneService($http) {
         //  alert();
         return $http.get("ngodata/getZoneCode");
     }
-    function crudNotification(objNotification) {
+    function crudZone(objNotification) {
        
         
         var req = {

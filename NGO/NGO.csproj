@@ -200,7 +200,9 @@
     <Content Include="images\img_flower2.jpg" />
     <Content Include="images\loading.gif" />
     <Content Include="images\new.gif" />
+    <Content Include="images\student.jpg" />
     <Content Include="images\success.jpg" />
+    <Content Include="images\teacher.jpg" />
     <Content Include="images\vivekananda.jpg" />
     <Content Include="scripts\angular-chosen.js" />
     <Content Include="scripts\angular\angular-animate.js" />

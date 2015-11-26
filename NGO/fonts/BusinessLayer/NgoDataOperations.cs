@@ -45,10 +45,10 @@ namespace NGO.BusinessLayer
         //    obj.CrudNotification(objNotification);
         //}
 
-        internal string GetNotificationCode()
-        {
-            return obj.GetZoneCode();
-        }
+        //internal string GetNotificationCode()
+        //{
+        //    return obj.GetZoneCode();
+        //}
 
         #endregion
 
