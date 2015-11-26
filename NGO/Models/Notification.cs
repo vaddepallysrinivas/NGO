@@ -34,6 +34,12 @@ namespace NGO.Models
     {
         public string Code { get; set; }
         public string ZoneName { get; set; }
+        public bool? Del_ind { set; get; }
+        public bool? IsActive { set; get; }
+        public int? CreatedBy { set; get; }
+        public DateTime? CreatedDate { set; get; }
+        public int? ModifiedBy { set; get; }
+        public DateTime? ModifiedDate { set; get; }
     }
     public class Mandal
     {

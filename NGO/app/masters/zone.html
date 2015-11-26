@@ -2,7 +2,7 @@
     <div class="row">
 
         <div class="panel panel-default">
-            <div class="panel-heading">Notification Master</div>
+            <div class="panel-heading">Zone Master</div>
             <div class="panel-body">
                 <form name="ncForm" class="form-horizontal" novalidate>
 
@@ -19,14 +19,14 @@
                         </div>
                         <!-- Code -->
                         <div class="col-sm-2">
-                            <label for="notificationCode" class="control-label">Notification Code</label>
+                            <label for="notificationCode" class="control-label">zone Code</label>
 
-                            <input type="text" class="form-control" readonly name="notificationCode" ng-model="vm.model.notificationCode" />
+                            <input type="text" class="form-control" readonly name="notificationCode" ng-model="vm.model.zone" />
 
                         </div>
                         <!-- notificatio Text -->
                         <div class="col-sm-6" ng-class="{ 'has-error' : vm.submitted}">
-                            <label for="notificationText" class="control-label">Notification Text</label>*
+                            <label for="notificationText" class="control-label">Zone Name</label>*
                             <input type="text"
                                 class="form-control"
                                 name="notificationText"
@@ -34,17 +34,7 @@
                                 ng-required="true" />
 
                         </div>
-                        <div class="col-sm-2" ng-class="{ 'has-error' :vm.submitted}">
-                            <label for="notificationcode" class="control-label">Fee Amount</label>*
-                            <input type="text"
-                                class="form-control"
-                                name="feeAmount"
-                                ng-model="vm.model.feeAmount"
-                                ng-required="true"
-                                maxlength="3"
-                                numbers-only />
-
-                        </div>
+                       
                         <div class="col-sm-2">
                             <label for="notificationcode" class="control-label">Is Active</label>
                             <input type="checkbox" class="form-control" name="isactive" ng-model="vm.model.isActive">
@@ -66,7 +56,7 @@
                     <hr />
                     <div class="col-sm-12">
 
-                        <div id="data" ui-grid="vm.gridNotifications" ui-grid-resize-columns ui-grid-auto-resize ui-grid-selection class="customGrid"></div>
+                        <div id="data" ui-grid="vm.gridZones" ui-grid-resize-columns ui-grid-auto-resize ui-grid-selection class="customGrid"></div>
                     </div>
 
 

@@ -36,7 +36,7 @@ namespace NGO.Controllers.api
             return obj.GetNotificationsList();
         }
         [Route("getNotificationCode")]
-        public Notification GetNotificationCode()
+        public string GetNotificationCode()
         {
 
             return obj.GetNotificationCode();
@@ -65,6 +65,21 @@ namespace NGO.Controllers.api
 
         #endregion
 
+        #region zone
+        [Route("getZoneList")]
+        public IEnumerable<Zone> getZoneList()
+        {
 
+            return obj.getZoneList();
+        }
+
+        [Route("getZoneCode")]
+        public string GetZoneCode()
+        {
+
+            return obj.GetZoneCode();
+        }
+
+        #endregion
     }
 }

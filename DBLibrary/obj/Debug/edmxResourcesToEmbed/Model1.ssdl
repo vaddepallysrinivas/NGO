@@ -292,6 +292,8 @@
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="Zoneid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Del_ind" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <Association Name="FK__tbl_Addre__Distr__37A5467C">
     <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="0..1" />
@@ -502,5 +504,6 @@
   <Function Name="proc_Notifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="vaddepally">
     <Parameter Name="xml" Type="xml" Mode="In" />
     <Parameter Name="type" Type="int" Mode="In" />
+    <Parameter Name="err_msg" Type="varchar" Mode="InOut" />
   </Function>
 </Schema>

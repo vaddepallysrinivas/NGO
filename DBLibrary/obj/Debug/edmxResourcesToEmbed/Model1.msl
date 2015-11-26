@@ -175,6 +175,8 @@
     <EntitySetMapping Name="tbl_Zone">
       <EntityTypeMapping TypeName="NGODBModel.tbl_Zone">
         <MappingFragment StoreEntitySet="tbl_Zone">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
           <ScalarProperty Name="Zoneid" ColumnName="Zoneid" />
           <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

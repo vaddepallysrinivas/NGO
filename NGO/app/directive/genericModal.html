@@ -1,0 +1,29 @@
+﻿<div class="modal-header">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+
+            <h3 class="modal-title">{{modalOptions.headerText}}</h3>
+        </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    {{modalOptions.bodyText}}
+                </div>
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <div class="col-md-6 col-sm-6"> </div>
+                    <div class="col-md-6 col-sm-6">
+
+                        <button class="btn btn-primary"  ng-show="modalOptions.closeButtonText.length>0"
+                                data-ng-click="modalOptions.close()">
+                            {{modalOptions.closeButtonText}}
+                        </button> &nbsp;
+                        <button class="btn btn-primary"  ng-show="modalOptions.actionButtonText.length>0"
+                                data-ng-click="modalOptions.ok();">
+                            {{modalOptions.actionButtonText}}
+                        </button>
+                        </div>
+                    </div>
+</div>

@@ -108,7 +108,6 @@ D:\GIT\NewNGO\NGO\obj\Debug\NGO.pdb
 D:\GIT\NewNGO\NGO\bin\NGO.dll
 D:\GIT\NewNGO\NGO\bin\NGO.pdb
 D:\GIT\NewNGO\NGO\bin\Antlr3.Runtime.dll
-D:\GIT\NewNGO\NGO\bin\DBLibrary.dll
 D:\GIT\NewNGO\NGO\bin\EntityFramework.dll
 D:\GIT\NewNGO\NGO\bin\EntityFramework.SqlServer.dll
 D:\GIT\NewNGO\NGO\bin\Microsoft.Web.Infrastructure.dll
@@ -139,3 +138,4 @@ D:\GIT\NewNGO\NGO\bin\System.Web.Webpages.Deployment.xml
 D:\GIT\NewNGO\NGO\bin\System.Web.Webpages.Razor.xml
 D:\GIT\NewNGO\NGO\bin\System.Web.Helpers.xml
 D:\GIT\NewNGO\NGO\bin\System.Web.Mvc.xml
+D:\GIT\NewNGO\NGO\bin\DBLibrary.dll

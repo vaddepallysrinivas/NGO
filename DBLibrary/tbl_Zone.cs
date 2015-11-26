@@ -28,6 +28,8 @@ namespace DBLibrary
         public Nullable<int> ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
         public int Zoneid { get; set; }
+        public Nullable<bool> Del_ind { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual ICollection<tbl_District> tbl_District { get; set; }
         public virtual ICollection<tbl_Address> tbl_Address { get; set; }

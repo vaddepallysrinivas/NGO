@@ -15,7 +15,7 @@ namespace NGO.BusinessLayer
         {
             obj = new NgoDbOperations();
         }
-
+        #region Notifications
         public IEnumerable<Notification> GetNotificationsList()
         {
             return obj.GetNotificationsList();
@@ -26,10 +26,33 @@ namespace NGO.BusinessLayer
             obj.CrudNotification(objNotification);
         }
 
-        internal Notification GetNotificationCode()
+        internal string GetNotificationCode()
         {
             return obj.GetNotificationCode();
         }
+
+        #endregion
+
+
+        #region Zones
+        public IEnumerable<Zone> getZoneList()
+        {
+            return obj.getZoneList();
+        }
+
+        //public void CrudNotification(Notification objNotification)
+        //{
+        //    obj.CrudNotification(objNotification);
+        //}
+
+        internal string GetNotificationCode()
+        {
+            return obj.GetZoneCode();
+        }
+
+        #endregion
+
+
         internal IEnumerable<District> GetDistricts()
         {
             return obj.GetDistricts();

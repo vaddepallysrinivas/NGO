@@ -17,48 +17,39 @@ namespace NGO.DataAcessLayer
         private DBLibrary.DBLibrary lobj = new DBLibrary.DBLibrary();
         private NGODBEntities lobj1 = new NGODBEntities();
         private DataTable dt;
-        private XmlDocument xml;
+        private XmlDocument xmlDoc;
         private string ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ngoConstring"].ToString();
 
-
+        #region norifications
         public void CrudNotification(Notification objNotification)
         {
 
-            if (objNotification.Type == 1)
-            {
+            //create XML Document Class objct
+            xmlDoc = new XmlDocument();
+            //creating header tag
+            xmlDoc = XMLdoc.CreateXmlHeading(xmlDoc);
 
-                using (lobj1)
-                {
-                    var tbl_Notifications = new tbl_Notifications()
-                    {
-                        code = objNotification.Code,
-                        NotificationText = objNotification.NotificationText,
-                        FeeAmount = 0,
-                        CreatedDate=System.DateTime.Now
-                      
+            //--------------creating elements with data in header roor------------
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "notificationid", objNotification.NotificationId.ToString());
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "code", objNotification.Code);
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "notificationtext", objNotification.NotificationText);
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "createdby", objNotification.CreatedBy.ToString());
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "modifiedby", objNotification.ModifiedBy.ToString());
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "feeamount", objNotification.FeeAmount.ToString());
+            xmlDoc = XMLdoc.AddXmlElement(xmlDoc, "isactive", objNotification.IsActive.ToString());
 
-                    };
-                }
+            //-----------creating elements with data in header roo-----------------------------------
 
-            }
+            SqlParameter param = new SqlParameter("@err_msg", SqlDbType.VarChar, 500);
+            param.Direction = ParameterDirection.Output;
 
-            List<Notification> result;
-            using (lobj1)
-            {
-                result = lobj1.tbl_Notifications.Select(x => new Notification()
-                {
-                    Code = x.code,
-                    NotificationText = x.NotificationText,
-                    FeeAmount = x.FeeAmount,
-                    IsActive = x.IsActive,
-                    CreatedBy = x.CreatedBy,
-                    ModifiedBy = x.ModifiedBy,
-                    CreatedDate = x.CreatedDate,
-                    ModifiedDate = x.ModifiedDate,
-                    Del_ind = x.Del_ind
+            lobj1.Database.ExecuteSqlCommand("proc_Notifications @xml,@type,@err_msg out",
+                new SqlParameter("@xml", xmlDoc.InnerXml),
+                  new SqlParameter("@type", objNotification.Type),
+                  param
+                );
 
-                }).ToList();
-            }
+
 
 
         }
@@ -80,20 +71,71 @@ namespace NGO.DataAcessLayer
                     ModifiedDate = x.ModifiedDate,
                     Del_ind = x.Del_ind
 
-                }).ToList();
+                }).Where(s => s.Del_ind == false).ToList();
             }
             return result;
 
         }
 
-        public Notification GetNotificationCode()
+        public string GetNotificationCode()
         {
-            var max_Query =
-               (from tab1 in lobj1.tbl_Notifications
-                select tab1.NotificationId).Max().ToString();
-            return new Notification() { Code = "Exam" + max_Query };
+            SqlParameter param = new SqlParameter("@err_msg", SqlDbType.VarChar, 500);
+            param.Direction = ParameterDirection.Output;
+
+            return lobj1.Database.SqlQuery<string>("proc_Notifications @xml,@type,@err_msg out",
+                new SqlParameter("@xml", ""),
+                  new SqlParameter("@type", 5),
+                  param
+                ).Single();
 
         }
+
+        #endregion
+
+
+
+        #region Zones
+        public IEnumerable<Zone> getZoneList()
+        {
+            List<Zone> result;
+            using (lobj1)
+            {
+                result = lobj1.tbl_Zone.Select(x => new Zone()
+                {
+                    Code = x.Code,
+                    ZoneName = x.ZoneName,
+                    CreatedBy = x.CreatedBy,
+                    ModifiedBy = x.ModifiedBy,
+                    CreatedDate = x.CreatedDate,
+                    ModifiedDate = x.ModifiedDate,
+                    Del_ind = x.Del_ind
+
+                }).Where(s => s.Del_ind == false).ToList();
+            }
+            return result;
+
+        }
+
+
+
+
+        public string GetZoneCode()
+        {
+            SqlParameter param = new SqlParameter("@err_msg", SqlDbType.VarChar, 500);
+            param.Direction = ParameterDirection.Output;
+
+            return lobj1.Database.SqlQuery<string>("proc_Notifications @xml,@type,@err_msg out",
+                new SqlParameter("@xml", ""),
+                  new SqlParameter("@type", 5),
+                  param
+                ).Single();
+
+        }
+
+
+
+
+        #endregion
 
         public IEnumerable<District> GetDistricts()
         {

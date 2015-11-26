@@ -1,14 +1,14 @@
 ﻿'use strict';
 
-angular.module('ngo').controller('notification', notification);
-notification.$inject = ['$state', '$scope', 'notificationService', 'uiGridConstants', 'modalService'];
+angular.module('ngo').controller('zone', notification);
+zone.$inject = ['$state', '$scope', 'zoneService', 'uiGridConstants', 'modalService'];
 
-function notification($state, $scope, notificationService, uiGridConstants, modalService) {
+function zone($state, $scope, notificationService, uiGridConstants, modalService) {
 
     var vm = {
         model: {},
         init: init,
-        getNotificationsList: getNotificationsList,
+        getZoneList: getZoneList,
         designGrid: designGrid,
         gridColumns: gridColumns,
         editRow: editRow,
@@ -17,9 +17,7 @@ function notification($state, $scope, notificationService, uiGridConstants, moda
         save: save,
         clear: clear,
         crudNotification: crudNotification,
-        getColor: getColor,
-        submitted: true,
-        errorMessage: []
+        getColor: getColor
 
     };
 
@@ -27,25 +25,9 @@ function notification($state, $scope, notificationService, uiGridConstants, moda
 
     return vm;
 
-    function save() {
-        vm.submitted = false;
-        vm.errorMessage = [];
-
-        if (vm.model.notificationText.length == 0) {
-            vm.errorMessage.push("Enter notificatin Text");
-        }
-
-        if (vm.model.feeAmount.length == 0) {
-
-            vm.errorMessage.push("Enter notificatin Amount ");
-        }
-
-        if (vm.errorMessage.length > 0) {
-            vm.submitted = true;
-            return;
-        }
-
-        if (!vm.submitted) {
+    function save(ncForm) {
+        vm.submitted = true;
+        if (ncForm.$valid) {
 
             var objNotification = {
                 code: vm.model.notificationCode,
@@ -130,7 +112,6 @@ function notification($state, $scope, notificationService, uiGridConstants, moda
         vm.model.feeAmount = "";
         vm.model.isActive = false;
         vm.submitted = false;
-        vm.errorMessage=[]
     }
 
     function create() {
@@ -211,10 +192,11 @@ function notification($state, $scope, notificationService, uiGridConstants, moda
 
 
 
-    function getNotificationsList() {
-        notificationService.getNotificationsList().then(function (res) {
-            vm.gridNotifications.data = res.data;
-            vm.gridNotifications.columnDefs.forEach(function (colDef) {
+    function getZoneList() {
+        zoneService.getZoneList().then(function (res) {
+            vm.gridZones.data = res.data;
+
+            vm.gridZones.columnDefs.forEach(function (colDef) {
                 var numChars = (new String(colDef.name)).length;
                 colDef.width = numChars * 15;
             });

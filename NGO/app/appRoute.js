@@ -26,6 +26,15 @@ function appRoute($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: "notification",
         controllerAs: "vm"
     });
+    $stateProvider.state("admin.zone", {
+        url: "/zone",
+        title: "Zone",
+        templateUrl: "app/masters/zone.html",
+        controller: "zone",
+        controllerAs: "vm"
+    });
+
+
     $stateProvider.state("Teacher", {
         url: "/TeacherRegistration",
         title: "registation",

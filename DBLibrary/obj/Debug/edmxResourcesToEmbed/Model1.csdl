@@ -4,6 +4,7 @@
     <FunctionImport Name="proc_Notifications" ReturnType="Collection(NGODBModel.proc_Notifications_Result)">
       <Parameter Name="xml" Mode="In" Type="String" />
       <Parameter Name="type" Mode="In" Type="Int32" />
+      <Parameter Name="err_msg" Mode="InOut" Type="String" />
     </FunctionImport>
     <EntitySet Name="tbl_Cast" EntityType="NGODBModel.tbl_Cast" />
     <EntitySet Name="tbl_District" EntityType="NGODBModel.tbl_District" />
@@ -287,6 +288,8 @@
     <NavigationProperty Name="tbl_District" Relationship="NGODBModel.FK__tbl_Distr__zonec__48CFD27E" FromRole="tbl_Zone" ToRole="tbl_District" />
     <NavigationProperty Name="tbl_Address" Relationship="NGODBModel.FK__tbl_Addre__ZoneI__3B75D760" FromRole="tbl_Zone" ToRole="tbl_Address" />
     <NavigationProperty Name="tbl_schoolDetails" Relationship="NGODBModel.FK__tbl_schoo__ZoneI__4222D4EF" FromRole="tbl_Zone" ToRole="tbl_schoolDetails" />
+    <Property Type="Boolean" Name="Del_ind" />
+    <Property Type="Boolean" Name="IsActive" />
   </EntityType>
   <EntityType Name="tbl_Address">
     <Key>

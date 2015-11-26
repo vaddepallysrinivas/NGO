@@ -122,10 +122,16 @@
     <Content Include="app\appRoute.js" />
     <Content Include="app\directive\customDatePicker.html" />
     <Content Include="app\directive\customDatePicker.js" />
+    <Content Include="app\directive\genericModal.html" />
+    <Content Include="app\directive\modalService.js" />
+    <Content Include="app\directive\numbersOnly.js" />
     <Content Include="app\home\Home.html" />
     <Content Include="app\masters\notification.html" />
     <Content Include="app\masters\notification.js" />
     <Content Include="app\masters\notificationService.js" />
+    <Content Include="app\masters\zone.html" />
+    <Content Include="app\masters\zone.js" />
+    <Content Include="app\masters\zoneService.js" />
     <Content Include="app\Teacher\Teacher.html" />
     <Content Include="app\Teacher\Registration.html" />
     <Content Include="app\Teacher\TeacherReg.js" />

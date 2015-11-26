@@ -297,6 +297,8 @@
           <Property Name="ModifiedBy" Type="int" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="Zoneid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Del_ind" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <Association Name="FK__tbl_Addre__Distr__37A5467C">
           <End Role="tbl_District" Type="NGODBModel.Store.tbl_District" Multiplicity="0..1" />
@@ -507,6 +509,7 @@
         <Function Name="proc_Notifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="vaddepally">
           <Parameter Name="xml" Type="xml" Mode="In" />
           <Parameter Name="type" Type="int" Mode="In" />
+          <Parameter Name="err_msg" Type="varchar" Mode="InOut" />
         </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -516,6 +519,7 @@
           <FunctionImport Name="proc_Notifications" ReturnType="Collection(NGODBModel.proc_Notifications_Result)">
             <Parameter Name="xml" Mode="In" Type="String" />
             <Parameter Name="type" Mode="In" Type="Int32" />
+            <Parameter Name="err_msg" Mode="InOut" Type="String" />
           </FunctionImport>
           <EntitySet Name="tbl_Cast" EntityType="NGODBModel.tbl_Cast" />
           <EntitySet Name="tbl_District" EntityType="NGODBModel.tbl_District" />
@@ -799,6 +803,8 @@
           <NavigationProperty Name="tbl_District" Relationship="NGODBModel.FK__tbl_Distr__zonec__48CFD27E" FromRole="tbl_Zone" ToRole="tbl_District" />
           <NavigationProperty Name="tbl_Address" Relationship="NGODBModel.FK__tbl_Addre__ZoneI__3B75D760" FromRole="tbl_Zone" ToRole="tbl_Address" />
           <NavigationProperty Name="tbl_schoolDetails" Relationship="NGODBModel.FK__tbl_schoo__ZoneI__4222D4EF" FromRole="tbl_Zone" ToRole="tbl_schoolDetails" />
+          <Property Type="Boolean" Name="Del_ind" />
+          <Property Type="Boolean" Name="IsActive" />
         </EntityType>
         <EntityType Name="tbl_Address">
           <Key>
@@ -1210,6 +1216,8 @@
           <EntitySetMapping Name="tbl_Zone">
             <EntityTypeMapping TypeName="NGODBModel.tbl_Zone">
               <MappingFragment StoreEntitySet="tbl_Zone">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Del_ind" ColumnName="Del_ind" />
                 <ScalarProperty Name="Zoneid" ColumnName="Zoneid" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />

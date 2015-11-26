@@ -43,7 +43,7 @@ namespace DBLibrary
         public DbSet<tbl_Address> tbl_Address { get; set; }
         public DbSet<tbl_schoolDetails> tbl_schoolDetails { get; set; }
     
-        public virtual ObjectResult<proc_Notifications_Result> proc_Notifications(string xml, Nullable<int> type)
+        public virtual ObjectResult<proc_Notifications_Result> proc_Notifications(string xml, Nullable<int> type, ObjectParameter err_msg)
         {
             var xmlParameter = xml != null ?
                 new ObjectParameter("xml", xml) :
@@ -53,7 +53,7 @@ namespace DBLibrary
                 new ObjectParameter("type", type) :
                 new ObjectParameter("type", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Notifications_Result>("proc_Notifications", xmlParameter, typeParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Notifications_Result>("proc_Notifications", xmlParameter, typeParameter, err_msg);
         }
     
         public virtual ObjectResult<Nullable<int>> proc_TeacherReg(string p_firstName, string p_middleName, string p_lastName, string p_email, string p_selectedGenderId, string p_contactno, string p_schoolName, string p_schoolAdd, string p_schoolDistrictId, string p_ScholZoneId, string p_schoolMandalid, string p_schoolVillage)
