@@ -73,12 +73,12 @@ namespace NGO.Controllers.api
             return obj.getZoneList();
         }
 
-        [Route("getZoneCode")]
-        public string GetZoneCode()
-        {
+        //[Route("getZoneCode")]
+        //public string GetZoneCode()
+        //{
 
-            return obj.GetZoneCode();
-        }
+        //    return obj.GetZoneCode();
+        //}
 
         #endregion
     }
